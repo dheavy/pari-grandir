@@ -1,0 +1,24 @@
+# Wordpress Theme gitignore file.
+
+# OS & IDE
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Wordpress files.
+
+# Ignore everything in the root except the work directories.
+/*
+!.gitignore
+!wp-content/
+!_src
+!_mockup
+!README.md
+
+# Ignore everything in the "plugins" directory, except the plugins you
+# specify.
+wp-content/plugins/*
+
+# Ignore everything in the "themes" directory, except the themes you.
+wp-content/themes/*
+!wp-content/themes/parigrandir/
