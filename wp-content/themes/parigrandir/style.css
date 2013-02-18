@@ -1,0 +1,10 @@
+/*
+Theme Name: Pari Grandir v2.
+Theme URI: http://pari-grandir.com
+Author: Davy Peter Braun
+Author URI: http://davybraun.com/
+Description: A ad-hoc replacement for previous Joomla-based (and broken) template.
+Version: 1.0
+*/
+@import 'css/normalize.min.css';
+@import 'css/parigrandir.css';

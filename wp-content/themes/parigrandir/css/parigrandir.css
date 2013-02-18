@@ -1,0 +1,402 @@
+body {
+	background-image: url(../img/bg.jpg);
+	background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/bg.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/bg.jpg', sizingMethod='scale')";
+}
+
+#wrapper { 
+	position: relative;
+	width: 1070px;
+	height: auto;
+	min-height: 100px;
+	left: 50%;
+	margin-left: -535px;
+}
+
+header, nav {
+	position: relative;
+	float: left;
+	width: 1070px;
+}
+
+header h1 {
+	width: 276px;
+	height: 137px;
+	background: url(../img/spritesheet.png) -400px -500px;
+	display: block;
+	text-indent: -9999em;
+	float: left;
+	font-size: 1px;
+}
+
+header h1 a,
+header h1 a:visited,
+header h1 a:active,
+header h1 a:hover {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: 148px;
+	font-size: 1px;
+}
+
+nav.top {
+	background-color: #CCC;
+	height: 100px;
+	overflow: hidden;
+}
+
+nav.top ul {
+	margin: 0; 
+	padding: 0;
+	font-family : Comic Sans MS, Comic Sans MS5, cursive, Arial;
+}
+
+nav.top ul a, 
+nav.top ul a:visited,
+nav.top ul a:active,
+nav.top ul a:hover {
+	text-decoration: none;
+	font-size: 10px;
+	text-transform: uppercase;
+}   
+
+li.menu {
+	list-style: none;
+	display: inline;
+	float: left;
+}
+
+ul.submenu {
+	list-style: none;
+	position: absolute;
+	display: block;
+	display: none;
+}
+
+ul.submenu a {
+	position: relative;
+	display: block;
+	text-align: center;
+	margin-top: -5px;
+	padding: 0px;
+	height: 20px;
+	background: none;
+}
+
+.menu-item {
+	position: relative;
+	display: block;
+}
+
+.menu-item-0 > span a {
+	position: relative;
+	width: 95px;
+	display: block;
+	text-align: center;
+	margin-top: 60px;
+	padding-top: 20px;
+	height: 80px;
+	background-image: url(../img/spritesheet.png);
+	background-repeat: no-repeat;
+	background-position: 0px -58px;
+	overflow: hidden;
+}
+
+.menu-item-0 > span a:hover { 
+	background-position: -100px -58px;
+	color: #FFF;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.menu-item-1 > span a {
+	position: relative;
+	width: 120px;
+	display: block;
+	text-align: center;
+	margin-top: 60px;
+	padding-top: 18px;
+	height: 80px;
+	background-image: url(../img/spritesheet.png);
+	background-repeat: no-repeat;
+	background-position: 0px -158px;
+	overflow: hidden;
+}
+
+.menu-item-1 > span a:hover, .menu-item-1 > span a.selected  { 
+	background-position: -125px -158px;
+	color: #FFF;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.menu-item-2 > span a {
+	position: relative;
+	width: 80px;
+	display: block;
+	text-align: center;
+	margin-top: 50px;
+	padding-top: 18px;
+	padding-right: 20px;
+	padding-left: 20px;
+	height: 80px;
+	background-image: url(../img/spritesheet.png);
+	background-repeat: no-repeat;
+	background-position: 0px -248px;
+	overflow: hidden;
+}
+
+.menu-item-2 > span a:hover, .menu-item-2 > span a.selected { 
+	background-position: -125px -248px;
+	color: #FFF;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.menu-item-3 > span a {
+	position: relative;
+	width: 74px;
+	display: block;
+	text-align: center;
+	margin-top: 40px;
+	padding-top: 31px;
+	padding-left: 5px;
+	padding-right: 15px;
+	height: 80px;
+	background-image: url(../img/spritesheet.png);
+	background-repeat: no-repeat;
+	background-position: 0px -337px;
+	overflow: hidden;
+}
+
+.menu-item-3 > span a:hover, .menu-item-3 > span a.selected { 
+	background-position: -100px -337px;
+	color: #FFF;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.menu-item-4 > span a {
+	position: relative;
+	width: 84px;
+	display: block;
+	text-align: center;
+	margin-top: 40px;
+	margin-left: -9px;
+	padding-top: 29px;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 80px;
+	background-image: url(../img/spritesheet.png);
+	background-repeat: no-repeat;
+	background-position: 0px -437px;
+	overflow: hidden;
+}
+
+.menu-item-4 > span a:hover, .menu-item-4 > span a.selected { 
+	background-position: -100px -437px;
+	color: #FFF;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.menu-item-5 > span a {
+	position: relative;
+	width: 60px;
+	display: block;
+	text-align: center;
+	margin-top: 40px;
+	padding-top: 30px;
+	padding-left: 15px;
+	padding-right: 15px;
+	height: 80px;
+	background-image: url(../img/spritesheet.png);
+	background-repeat: no-repeat;
+	background-position: 0px -537px;
+	overflow: hidden;
+}
+
+.menu-item-5 > span a:hover, .menu-item-5 > span a.selected { 
+	background-position: -100px -537px;
+	color: #FFF;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.menu-item-6 > span a {
+	position: relative;
+	width: 68px;
+	display: block;
+	text-align: center;
+	margin-top: 40px;
+	padding-top: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 80px;
+	background-image: url(../img/spritesheet.png);
+	background-repeat: no-repeat;
+	background-position: 0px -637px;
+}
+
+.menu-item-6 > span a:hover, .menu-item-6 > span a.selected { 
+	background-position: -100px -637px;
+	color: #FFF;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.menu-item-7 > span a {
+	position: relative;
+	width: 60px;
+	display: block;
+	text-align: center;
+	margin-top: 40px;
+	padding-top: 25px;
+	padding-left: 10px;
+	padding-right: 15px;
+	height: 80px;
+	background-image: url(../img/spritesheet.png);
+	background-repeat: no-repeat;
+	background-position: 0px -737px;
+	overflow: hidden;
+}
+
+.menu-item-7 > span a:hover, .menu-item-7 > span a.selected { 
+	background-position: -100px -737px;
+	color: #FFF;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.menu-item-8 > span a {
+	position: relative;
+	width: 90px;
+	display: block;
+	text-align: center;
+	margin-top: 40px;
+	padding-top: 25px;
+	height: 80px;
+	background-image: url(../img/spritesheet.png);
+	background-repeat: no-repeat;
+	background-position: 0px -837px;
+	overflow: hidden;
+}
+
+.menu-item-8 > span a:hover, .menu-item-8 > span a.selected { 
+	background-position: -100px -837px;
+	color: #FFF;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.menu-item-9 > span a {
+	position: relative;
+	width: 124px;
+	display: block;
+	text-align: center;
+	margin-top: 41px;
+	padding-top: 38px;
+	height: 80px;
+	background-image: url(../img/spritesheet.png);
+	background-repeat: no-repeat;
+	background-position: 0px -938px;
+	overflow: hidden;
+}
+
+.menu-item-9 > span a:hover, .menu-item-9 > span a.selected { 
+	background-position: -125px -938px;
+	color: #FFF;
+	cursor: pointer;
+	cursor: hand;
+}
+
+#flyout-container a {
+	font-size: 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.submenu > li span a:hover {
+	color: #FFF;
+}
+
+.submenu-item-2 {
+	left: 151px;
+	top: 49px;
+	width: 163px;
+	height: 66px;
+	margin-left: 39px;
+	padding: 57px 0 0 0;
+	margin-top: -93px !important;
+	background: transparent url(../img/sm_atelier_bebe.png) 0px 39px no-repeat;
+}
+
+.submenu-item-3 {
+	left: 281px;
+	top: 52px;
+	width: 155px;
+	margin-left: 20px;
+	padding: 58px 0 0 0;
+	margin-top: -102px !important;
+	background: transparent url(../img/sm_atelier_enfants.png) no-repeat 0px 43px;
+	height: 74px;
+}
+
+.submenu-item-4 {
+	left: 359px;
+	top: 52px;
+	width: 170px;
+	margin-left: 20px;
+	padding: 58px 0 0 0;
+	margin-top: -99px !important;
+	background: transparent url(../img/sm_atelier_adultes.png) no-repeat 0px 43px;
+	height: 106px;
+}
+
+.submenu-item-5 {
+	left: 489px;
+	top: 52px;
+	width: 130px;
+	padding: 65px 0 0 0;
+	margin-top: -102px !important;
+	background: transparent url(../img/sm_planning_and_tarifs.png) no-repeat 0px 43px;
+	height: 74px;
+}
+
+.submenu-item-2 a, .submenu-item-3 a, .submenu-item-4 a, .submenu-item-5 a {
+	margin:	4px;
+}
+
+.submenu-item-2 a:hover, .submenu-item-3 a:hover, .submenu-item-4 a:hover, .submenu-item-5 a:hover {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.fr { display: block }
+.en { display: none }
+
+.to-blog {
+	width: 141px;
+	height: 130px;
+	background: url(../img/spritesheet.png) -400px -285px;
+	text-indent: -9999em;
+	float: right;
+	font-size: 1px;
+}
+
+.to-blog a,
+.to-blog a:visited,
+.to-blog a:active,
+.to-blog a:hover {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: 130px;
+	font-size: 1px;
+}
