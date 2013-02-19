@@ -51,7 +51,7 @@ nav.top {
 	overflow: hidden;
 }
 
-nav.top ul {
+nav.top ul, .submenu {
 	margin: 0; 
 	padding: 0;
 	font-family : Comic Sans MS, Comic Sans MS5, cursive, Arial;
@@ -165,7 +165,7 @@ ul.submenu a {
 	display: block;
 	text-align: center;
 	margin-top: 40px;
-	padding-top: 31px;
+	padding-top: 27px;
 	padding-left: 5px;
 	padding-right: 15px;
 	height: 80px;
@@ -189,7 +189,7 @@ ul.submenu a {
 	text-align: center;
 	margin-top: 40px;
 	margin-left: -9px;
-	padding-top: 29px;
+	padding-top: 24px;
 	padding-left: 5px;
 	padding-right: 5px;
 	height: 80px;
@@ -212,7 +212,7 @@ ul.submenu a {
 	display: block;
 	text-align: center;
 	margin-top: 40px;
-	padding-top: 30px;
+	padding-top: 24px;
 	padding-left: 15px;
 	padding-right: 15px;
 	height: 80px;
@@ -301,7 +301,7 @@ ul.submenu a {
 	display: block;
 	text-align: center;
 	margin-top: 41px;
-	padding-top: 38px;
+	padding-top: 30px;
 	height: 80px;
 	background-image: url(../img/spritesheet.png);
 	background-repeat: no-repeat;
@@ -334,7 +334,7 @@ ul.submenu a {
 	margin-left: 39px;
 	padding: 57px 0 0 0;
 	margin-top: -93px !important;
-	background: transparent url(../img/sm_atelier_bebe.png) 0px 39px no-repeat;
+	background: transparent url(../img/spritesheet.png) no-repeat -600px -259px;
 }
 
 .submenu-item-3 {
@@ -344,7 +344,7 @@ ul.submenu a {
 	margin-left: 20px;
 	padding: 58px 0 0 0;
 	margin-top: -102px !important;
-	background: transparent url(../img/sm_atelier_enfants.png) no-repeat 0px 43px;
+	background: transparent url(../img/spritesheet.png) no-repeat -800px -252px;
 	height: 74px;
 }
 
@@ -355,7 +355,7 @@ ul.submenu a {
 	margin-left: 20px;
 	padding: 58px 0 0 0;
 	margin-top: -99px !important;
-	background: transparent url(../img/sm_atelier_adultes.png) no-repeat 0px 43px;
+	background: transparent url(../img/spritesheet.png) no-repeat -1001px -256px;
 	height: 106px;
 }
 
@@ -365,7 +365,7 @@ ul.submenu a {
 	width: 130px;
 	padding: 65px 0 0 0;
 	margin-top: -102px !important;
-	background: transparent url(../img/sm_planning_and_tarifs.png) no-repeat 0px 43px;
+	background: transparent url(../img/spritesheet.png) no-repeat -1197px -253px;
 	height: 74px;
 }
 
