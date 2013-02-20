@@ -11,17 +11,23 @@ body {
 
 #wrapper { 
 	position: relative;
-	width: 1070px;
+	width: 1030px;
 	height: auto;
 	min-height: 100px;
 	left: 50%;
 	margin-left: -535px;
 }
 
-header, nav {
+header {
 	position: relative;
 	float: left;
-	width: 1070px;
+	width: 1030px;
+}
+
+nav {
+	position: relative;
+	float: left;
+	width: 100%;
 }
 
 header h1 {
@@ -46,9 +52,11 @@ header h1 a:hover {
 }
 
 nav.top {
-	background-color: #CCC;
+	/*background-color: #CCC;*/
 	height: 100px;
 	overflow: hidden;
+	margin-top: -50px;
+	padding-left: 10px;
 }
 
 nav.top ul, .submenu {
@@ -96,16 +104,22 @@ ul.submenu a {
 
 .menu-item-0 > span a {
 	position: relative;
+	font-weight: bold;
 	width: 95px;
 	display: block;
 	text-align: center;
 	margin-top: 60px;
-	padding-top: 20px;
+	padding-top: 18px;
 	height: 80px;
 	background-image: url(../img/spritesheet.png);
 	background-repeat: no-repeat;
 	background-position: 0px -58px;
 	overflow: hidden;
+	color: #16AFE8;
+	-webkit-transform: rotate(-5deg);
+	-moz-transform: rotate(-5deg);
+	-ms-transform: rotate(-5deg);
+	-o-transform: rotate(-5deg);
 }
 
 .menu-item-0 > span a:hover { 
@@ -117,16 +131,22 @@ ul.submenu a {
 
 .menu-item-1 > span a {
 	position: relative;
+	font-weight: bold;
 	width: 120px;
 	display: block;
 	text-align: center;
 	margin-top: 60px;
-	padding-top: 18px;
+	padding-top: 15px;
 	height: 80px;
 	background-image: url(../img/spritesheet.png);
 	background-repeat: no-repeat;
 	background-position: 0px -158px;
 	overflow: hidden;
+	color: #ED3F24;
+	-webkit-transform: rotate(-1deg);
+	-moz-transform: rotate(-1deg);
+	-ms-transform: rotate(-1deg);
+	-o-transform: rotate(-1deg);
 }
 
 .menu-item-1 > span a:hover, .menu-item-1 > span a.selected  { 
@@ -138,6 +158,7 @@ ul.submenu a {
 
 .menu-item-2 > span a {
 	position: relative;
+	font-weight: bold;
 	width: 80px;
 	display: block;
 	text-align: center;
@@ -150,6 +171,11 @@ ul.submenu a {
 	background-repeat: no-repeat;
 	background-position: 0px -248px;
 	overflow: hidden;
+	color: #D5941E;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 }
 
 .menu-item-2 > span a:hover, .menu-item-2 > span a.selected { 
@@ -161,6 +187,7 @@ ul.submenu a {
 
 .menu-item-3 > span a {
 	position: relative;
+	font-weight: bold;
 	width: 74px;
 	display: block;
 	text-align: center;
@@ -173,6 +200,11 @@ ul.submenu a {
 	background-repeat: no-repeat;
 	background-position: 0px -337px;
 	overflow: hidden;
+	color: #2FA8DB;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 }
 
 .menu-item-3 > span a:hover, .menu-item-3 > span a.selected { 
@@ -184,6 +216,7 @@ ul.submenu a {
 
 .menu-item-4 > span a {
 	position: relative;
+	font-weight: bold;
 	width: 84px;
 	display: block;
 	text-align: center;
@@ -197,6 +230,11 @@ ul.submenu a {
 	background-repeat: no-repeat;
 	background-position: 0px -437px;
 	overflow: hidden;
+	color: #DE78CB;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 }
 
 .menu-item-4 > span a:hover, .menu-item-4 > span a.selected { 
@@ -208,6 +246,7 @@ ul.submenu a {
 
 .menu-item-5 > span a {
 	position: relative;
+	font-weight: bold;
 	width: 60px;
 	display: block;
 	text-align: center;
@@ -220,6 +259,11 @@ ul.submenu a {
 	background-repeat: no-repeat;
 	background-position: 0px -537px;
 	overflow: hidden;
+	color: #009245;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 }
 
 .menu-item-5 > span a:hover, .menu-item-5 > span a.selected { 
@@ -231,6 +275,7 @@ ul.submenu a {
 
 .menu-item-6 > span a {
 	position: relative;
+	font-weight: bold;
 	width: 68px;
 	display: block;
 	text-align: center;
@@ -242,6 +287,11 @@ ul.submenu a {
 	background-image: url(../img/spritesheet.png);
 	background-repeat: no-repeat;
 	background-position: 0px -637px;
+	color: #9D128E;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 }
 
 .menu-item-6 > span a:hover, .menu-item-6 > span a.selected { 
@@ -253,6 +303,7 @@ ul.submenu a {
 
 .menu-item-7 > span a {
 	position: relative;
+	font-weight: bold;
 	width: 60px;
 	display: block;
 	text-align: center;
@@ -265,6 +316,11 @@ ul.submenu a {
 	background-repeat: no-repeat;
 	background-position: 0px -737px;
 	overflow: hidden;
+	color: #0071BC;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 }
 
 .menu-item-7 > span a:hover, .menu-item-7 > span a.selected { 
@@ -276,6 +332,7 @@ ul.submenu a {
 
 .menu-item-8 > span a {
 	position: relative;
+	font-weight: bold;
 	width: 90px;
 	display: block;
 	text-align: center;
@@ -286,6 +343,11 @@ ul.submenu a {
 	background-repeat: no-repeat;
 	background-position: 0px -837px;
 	overflow: hidden;
+	color: #E00A0A;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 }
 
 .menu-item-8 > span a:hover, .menu-item-8 > span a.selected { 
@@ -297,6 +359,7 @@ ul.submenu a {
 
 .menu-item-9 > span a {
 	position: relative;
+	font-weight: bold;
 	width: 124px;
 	display: block;
 	text-align: center;
@@ -307,6 +370,11 @@ ul.submenu a {
 	background-repeat: no-repeat;
 	background-position: 0px -938px;
 	overflow: hidden;
+	color: #E3288D;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 }
 
 .menu-item-9 > span a:hover, .menu-item-9 > span a.selected { 
@@ -316,19 +384,31 @@ ul.submenu a {
 	cursor: hand;
 }
 
+#flyout-container {
+	z-index: 3;
+}
+
+.below-flyout-container {
+	z-index: 2; /* to move below #flyout-container */
+}
+
 #flyout-container a {
 	font-size: 10px;
 	text-decoration: none;
 	text-transform: uppercase;
 }
 
-.submenu > li span a:hover {
+.submenu > li span a {
 	color: #FFF;
 }
 
+.submenu > li span a:hover {
+	color: #111;
+}
+
 .submenu-item-2 {
-	left: 151px;
-	top: 49px;
+	left: 157px;
+	top: 45px;
 	width: 163px;
 	height: 66px;
 	margin-left: 39px;
@@ -338,8 +418,8 @@ ul.submenu a {
 }
 
 .submenu-item-3 {
-	left: 281px;
-	top: 52px;
+	left: 287px;
+	top: 50px;
 	width: 155px;
 	margin-left: 20px;
 	padding: 58px 0 0 0;
@@ -349,8 +429,8 @@ ul.submenu a {
 }
 
 .submenu-item-4 {
-	left: 359px;
-	top: 52px;
+	left: 370px;
+	top: 50px;
 	width: 170px;
 	margin-left: 20px;
 	padding: 58px 0 0 0;
@@ -360,8 +440,8 @@ ul.submenu a {
 }
 
 .submenu-item-5 {
-	left: 489px;
-	top: 52px;
+	left: 498px;
+	top: 50px;
 	width: 130px;
 	padding: 65px 0 0 0;
 	margin-top: -102px !important;
@@ -376,6 +456,12 @@ ul.submenu a {
 .submenu-item-2 a:hover, .submenu-item-3 a:hover, .submenu-item-4 a:hover, .submenu-item-5 a:hover {
 	cursor: pointer;
 	cursor: hand;
+}
+
+footer {
+	background: url(../img/spritesheet.png) repeat-x -400px 0px;
+	width: 2000px;
+	height: 238px;
 }
 
 .fr { display: block }
@@ -399,4 +485,17 @@ ul.submenu a {
 	height: 100%;
 	min-height: 130px;
 	font-size: 1px;
+}
+
+#page-accueil {
+	position: relative;
+	width: 1030px;
+}
+
+#page-accueil .top {
+	background: url(../img/header_white.png) no-repeat;
+	width: 100%;
+	height: 70px;
+	float: left;
+	margin-top: -14px;
 }

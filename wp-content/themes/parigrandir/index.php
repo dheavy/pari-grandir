@@ -11,6 +11,10 @@
 
 <?php pg_get_nav() ?>
 
+	<section id="page-accueil">
+		<div class="top below-flyout-container"></div>
+	</section>
+
 </div>
 
 <?php get_footer() ?>
