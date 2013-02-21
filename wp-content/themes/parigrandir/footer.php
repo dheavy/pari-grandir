@@ -10,12 +10,9 @@
 						<p><strong>Tel</strong> - 01 71 50 58 86</p>
 						<p><strong>Mail</strong> - <a href="mailto:contact@pari-grandir.com">contact@pari-grandir.com</a></p>
 					</span>
-					<span class="extra-links">
-						<ul>
-							<li><a href="/mentions-legales" alt="" title="" class="fr">Mentions légales</a><a href="/mentions-legales" alt="" title="" class="en">Terms &amp; Conditions</a></li>
-							<li><a href="/recrutement" alt="" title="" class="fr">Recrutement</a><a href="/recrutement" alt="" title="" class="en">Jobs</a></li>
-						</ul>
-					</span>
+					
+					<?php pg_get_extra_links() ?>
+
 				</section>
 				
 				<?php pg_get_footer_tabs() ?>

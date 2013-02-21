@@ -1,4 +1,31 @@
 <?php
+if (!session_id()) {
+	add_action('init', 'session_start');
+}
+/**
+ * BILINGUALISM FUNCTIONS
+ * =================================================================================================
+ */
+$_SESSION['current_lang'] = 'fr';
+add_action( 'wp_ajax_switch', 'ajax_switch_lang' );
+function ajax_switch_lang()
+{
+	$result = array();
+	$requested_lang = $_GET['lang'];
+	if ($requested_lang == 'fr' || $requested_lang == 'en') {
+		if ($requested_lang != $_SESSION['current_lang']) {
+			$_SESSION['current_lang'] = $requested_lang;
+			$result = array('success' => $_SESSION['current_lang']);
+		} else {
+			$result = array('error' => 'already using ' . $_SESSION['current_lang']);
+		}
+	} else {
+		$result = array('error' => 'fr or en only');
+	}
+	header("Content-Type: text/json");
+	die(json_encode($result));
+}
+
 function pg_get_header()
 {
 	echo <<<EOT
@@ -7,8 +34,14 @@ function pg_get_header()
 	<header>
 		<h1 class="fr"><a href="/" alt="Cliquez ici pour retourner &agrave; l'accueil" title="Retourner &agrave; l'accueil">Pari-Grandir | Centre ludo-&eacute;ducatif bilingue</a></h1>
 		<h1 class="en"><a href="/" alt="Click here to go back to homepage" title="Back to homepage">Pari-Grandir | Centre ludo-&eacute;ducatif bilingue</a></h1>
-		<span class="fr to-blog"><a href="http://pari-grandir.blogspot.fr/" alt="Cliquer ici pour d&eacute;couvrir notre blog" title="D&eacute;couvrir notre blog">The Blog</a></span>
-		<span class="en to-blog"><a href="http://pari-grandir.blogspot.fr/" alt="Click here to read our blog" title="Read our blog">The Blog</a></span>
+		<div class="header-links">		
+			<div id="lang-switchers">
+				<div class="lang-switch"><a href="#" data-lang="fr">fran&ccedil;ais</a></div>
+				<div class="lang-switch"><a href="#" data-lang="en">english</a></div>
+			</div>
+			<span class="fr to-blog"><a href="http://pari-grandir.blogspot.fr/" alt="Cliquer ici pour d&eacute;couvrir notre blog" title="D&eacute;couvrir notre blog">The Blog</a></span>
+			<span class="en to-blog"><a href="http://pari-grandir.blogspot.fr/" alt="Click here to read our blog" title="Read our blog">The Blog</a></span>
+		</div>
 	</header>
 EOT;
 }
@@ -94,7 +127,35 @@ function pg_get_nav()
 	echo '<nav id="flyout-container"></nav>' . "\n";
 }
 
-function pg_get_footer_tabs() {
+function pg_get_extra_links() 
+{
+	global $pages;
+
+	$terms = null;
+	$jobs = null;
+
+	foreach ($pages as $page) {
+		if ($page->post_parent == 0) {
+			if ($page->post_name == "mentions-legales") $terms = $page;
+			else if ($page->post_name == "recrutement") $jobs = $page;
+		}
+	}
+
+	$terms_permalinks = get_permalink($terms->ID);
+	$jobs_permalinks = get_permalink($jobs->ID);
+
+	echo <<<EOT
+	<span class="extra-links">
+		<ul>
+			<li><a href="$terms_permalinks" alt="" title="" class="fr">$terms->post_title</a><a href="$terms_permalinks" alt="" title="" class="en">$terms->post_title</a></li>
+			<li><a href="$jobs_permalinks" alt="" title="" class="fr">$jobs->post_title</a><a href="$jobs_permalinks" alt="" title="" class="en">$jobs->post_title</a></li>
+		</ul>
+	</span>
+EOT;
+}
+
+function pg_get_footer_tabs() 
+{
 	global $pages;
 	$i = 0;
 
@@ -103,6 +164,7 @@ function pg_get_footer_tabs() {
 
 	foreach ($pages as $key => $page) {
 		if ($page->post_parent == 0) {
+
 			// Parse content.
 			$page_id = $page->ID;
 			$page_title = array(

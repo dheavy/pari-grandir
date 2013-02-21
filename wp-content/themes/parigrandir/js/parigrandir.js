@@ -3,10 +3,27 @@
 
   jQuery(function() {
     /*
+    	Language switch mechanism
+    */
+
+    var $flyOutParents, $flyoutContainer, $langSwitch;
+    $langSwitch = $('.lang-switch');
+    $langSwitch.click(function(e) {
+      return $.ajax({
+        url: '/wp-admin/admin-ajax.php',
+        data: {
+          action: 'switch',
+          lang: e.target.getAttribute('data-lang')
+        },
+        complete: function(xhr) {
+          return console.log(xhr.responseText);
+        }
+      });
+    });
+    /*
     	Enable fly-out menus in top nav.
     */
 
-    var $flyOutParents, $flyoutContainer;
     $flyOutParents = $('.has-flyout-menu');
     $flyoutContainer = $('#flyout-container');
     return $flyOutParents.each(function(i, elm) {
