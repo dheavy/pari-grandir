@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
@@ -7,6 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="robots" content="index, follow">
+	<meta name="current_lang" content="<?php echo $_SESSION['current_lang'] ?>">
 	<link href="<?php bloginfo('atom_url') ?>" rel="alternate" type="application/rss+xml" title="RSS 2.0">
 	<link href="<?php bloginfo('rss2_url') ?>" rel="alternate" type="application/atom+xml" title="Atom 1.0">
 

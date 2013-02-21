@@ -1,24 +1,33 @@
 <?php
-if (!session_id()) {
-	add_action('init', 'session_start');
+add_action('init', 'start_session', 1);
+add_action('wp_logout', 'stop_session');
+add_action('wp_login', 'stop_session');
+
+function start_session() {
+  if(!session_id()) {
+    session_start();
+  }
 }
+
+function stop_session() {
+  session_destroy ();
+}
+
 /**
  * BILINGUALISM FUNCTIONS
  * =================================================================================================
  */
-$_SESSION['current_lang'] = 'fr';
+if (!isset($_SESSION['current_lang'])) 
+	$_SESSION['current_lang'] = 'fr';
+
 add_action( 'wp_ajax_switch', 'ajax_switch_lang' );
 function ajax_switch_lang()
 {
 	$result = array();
 	$requested_lang = $_GET['lang'];
 	if ($requested_lang == 'fr' || $requested_lang == 'en') {
-		if ($requested_lang != $_SESSION['current_lang']) {
-			$_SESSION['current_lang'] = $requested_lang;
-			$result = array('success' => $_SESSION['current_lang']);
-		} else {
-			$result = array('error' => 'already using ' . $_SESSION['current_lang']);
-		}
+		$_SESSION['current_lang'] = $requested_lang;
+		$result = array('success' => $_SESSION['current_lang']);
 	} else {
 		$result = array('error' => 'fr or en only');
 	}
@@ -36,8 +45,8 @@ function pg_get_header()
 		<h1 class="en"><a href="/" alt="Click here to go back to homepage" title="Back to homepage">Pari-Grandir | Centre ludo-&eacute;ducatif bilingue</a></h1>
 		<div class="header-links">		
 			<div id="lang-switchers">
-				<div class="lang-switch"><a href="#" data-lang="fr">fran&ccedil;ais</a></div>
-				<div class="lang-switch"><a href="#" data-lang="en">english</a></div>
+				<div class="lang-switch"><a href="#" class="to-fr" data-lang="fr">fran&ccedil;ais</a></div>
+				<div class="lang-switch"><a href="#" class="to-en" data-lang="en">english</a></div>
 			</div>
 			<span class="fr to-blog"><a href="http://pari-grandir.blogspot.fr/" alt="Cliquer ici pour d&eacute;couvrir notre blog" title="D&eacute;couvrir notre blog">The Blog</a></span>
 			<span class="en to-blog"><a href="http://pari-grandir.blogspot.fr/" alt="Click here to read our blog" title="Read our blog">The Blog</a></span>
@@ -100,7 +109,7 @@ function pg_get_nav()
 					);
 					echo '		<li>' . "\n";
 					echo '			<span class="fr"><a href="' . $subpage_permalink . '" alt="Aller &agrave; la rubrique ' . $subpage_title['fr'] . '" title="Aller &agrave; la rubrique ' . $subpage_title['fr'] . '">' . $subpage_title['fr'] . '</a></span>' . "\n";
-					echo '			<span class="en"><a href="' . $subpage_permalink . '" alt="Go to ' . $subpage_title['en'] . '" title="Go to ' . $subpage_title['en'] . '">' . $subpage_title['fr'] . '</a></span>' . "\n";
+					echo '			<span class="en"><a href="' . $subpage_permalink . '" alt="Go to ' . $subpage_title['en'] . '" title="Go to ' . $subpage_title['en'] . '">' . $subpage_title['en'] . '</a></span>' . "\n";
 					echo '		</li>' . "\n";
 				}
 
@@ -144,13 +153,22 @@ function pg_get_extra_links()
 	$terms_permalinks = get_permalink($terms->ID);
 	$jobs_permalinks = get_permalink($jobs->ID);
 
+	$terms_title_fr = $terms->post_title;
+	$terms_title_en = 'Terms &amp; Conditions';
+	$jobs_title_fr = $jobs->post_title;
+	$jobs_title_en = 'Jobs';
+
 	echo <<<EOT
-	<span class="extra-links">
-		<ul>
-			<li><a href="$terms_permalinks" alt="" title="" class="fr">$terms->post_title</a><a href="$terms_permalinks" alt="" title="" class="en">$terms->post_title</a></li>
-			<li><a href="$jobs_permalinks" alt="" title="" class="fr">$jobs->post_title</a><a href="$jobs_permalinks" alt="" title="" class="en">$jobs->post_title</a></li>
+	<div class="extra-links">
+		<ul class="fr">
+			<li><a href="$terms_permalinks" alt="" title="">$terms_title_fr</a></li>
+			<li><a href="$jobs_permalinks" alt="" title="">$jobs_title_fr</a></li>
 		</ul>
-	</span>
+		<ul class="en">
+			<li><a href="$terms_permalinks" alt="" title="">$terms_title_en</a></li>
+			<li><a href="$jobs_permalinks" alt="" title="">$jobs_title_en</a></li>
+		</ul>
+	</div>
 EOT;
 }
 
@@ -173,7 +191,7 @@ function pg_get_footer_tabs()
 			);
 			$permalink = get_permalink($page_id);
 
-			echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . '">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en">' . $page_title['en'] . '</a></li>' . "\n";
+			echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . '">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en tab-' . $i . '">' . $page_title['en'] . '</a></li>' . "\n";
 			
 			unset($pages[$key]);
 			$i++;

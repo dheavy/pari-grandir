@@ -44,6 +44,40 @@ header h1 a:hover {
 	font-size: 1px;
 }
 
+#lang-switchers {
+	width: 116px;
+	height: 40px;
+	position: relative;
+	float: left;
+	overflow: hidden;
+	left: 470px;
+	top: 50px;
+}
+
+.lang-switch a {
+	width: 116px;
+	height: 20px;
+	overflow: hidden;
+	display: block;
+	text-indent: -9999em;
+}
+
+.lang-switch a.to-fr {
+	background: url(../img/spritesheet.png) no-repeat -1500px -500px;
+}
+
+.lang-switch a.to-fr:hover, .lang-switch a.to-fr.selected {
+	background: url(../img/spritesheet.png) no-repeat -1500px -525px;
+}
+
+.lang-switch a.to-en {
+	background: url(../img/spritesheet.png) no-repeat -1500px -550px;
+}
+
+.lang-switch a.to-en:hover, .lang-switch a.to-en.selected {
+	background: url(../img/spritesheet.png) no-repeat -1500px -575px;
+}
+
 nav.top {
 	/*background-color: #CCC;*/
 	height: 100px;
@@ -520,6 +554,11 @@ footer .extra-links a:hover {
 	color: #FFF;
 }
 
+footer .extra-links {
+	position: absolute;
+	top: 45px;
+}
+
 footer .extra-links ul, footer .extra-links ul li {
 	display: inline-block;
 	list-style: none;
@@ -571,8 +610,8 @@ footer .tabs .tab-3  {
 	padding-top: 10px;
 }
 
-.fr { display: block }
-.en { display: none !important }
+.fr { display: none; } /* language stuff invisible by default */
+.en { display: none; } /* language stuff invisible by default */
 
 .to-blog {
 	width: 141px;

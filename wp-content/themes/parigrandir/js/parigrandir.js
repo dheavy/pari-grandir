@@ -6,27 +6,49 @@
     	Language switch mechanism
     */
 
-    var $flyOutParents, $flyoutContainer, $langSwitch;
+    var $flyOutParents, $flyoutContainer, $langSwitch, setLang;
     $langSwitch = $('.lang-switch');
     $langSwitch.click(function(e) {
-      return $.ajax({
+      $.ajax({
         url: '/wp-admin/admin-ajax.php',
         data: {
           action: 'switch',
           lang: e.target.getAttribute('data-lang')
         },
         complete: function(xhr) {
-          return console.log(xhr.responseText);
+          var lang;
+          if ($.parseJSON(xhr.responseText).success != null) {
+            lang = $.parseJSON(xhr.responseText).success;
+            return setLang(lang);
+          }
         }
       });
+      return false;
     });
+    /*
+    	Display proper language
+    */
+
+    setLang = function(lang) {
+      if (lang === 'fr') {
+        $('.en').css('display', 'none');
+        $('.fr').css('display', 'block');
+        $('.to-en', $langSwitch).removeClass('selected');
+        return $('.to-fr', $langSwitch).addClass('selected');
+      } else {
+        $('.fr').css('display', 'none');
+        $('.en').css('display', 'block');
+        $('.to-fr', $langSwitch).removeClass('selected');
+        return $('.to-en', $langSwitch).addClass('selected');
+      }
+    };
     /*
     	Enable fly-out menus in top nav.
     */
 
     $flyOutParents = $('.has-flyout-menu');
     $flyoutContainer = $('#flyout-container');
-    return $flyOutParents.each(function(i, elm) {
+    $flyOutParents.each(function(i, elm) {
       var $flyoutMenu;
       if (elm.getAttribute('data-submenu') !== null) {
         $flyoutMenu = $('.' + elm.getAttribute('data-submenu'));
@@ -41,6 +63,12 @@
         return $(elm).removeClass('selected');
       });
     });
+    /*
+    	Set default language.
+    */
+
+    setLang($('meta[name="current_lang"]').attr('content'));
+    return console.log($('meta[name="current_lang"]').attr('content'));
   });
 
 }).call(this);
