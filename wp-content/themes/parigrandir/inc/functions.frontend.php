@@ -1,6 +1,24 @@
 <?php
+function pg_get_header()
+{
+	echo <<<EOT
+	<div id="wrapper">
+
+	<header>
+		<h1 class="fr"><a href="/" alt="Cliquez ici pour retourner &agrave; l'accueil" title="Retourner &agrave; l'accueil">Pari-Grandir | Centre ludo-&eacute;ducatif bilingue</a></h1>
+		<h1 class="en"><a href="/" alt="Click here to go back to homepage" title="Back to homepage">Pari-Grandir | Centre ludo-&eacute;ducatif bilingue</a></h1>
+		<span class="fr to-blog"><a href="http://pari-grandir.blogspot.fr/" alt="Cliquer ici pour d&eacute;couvrir notre blog" title="D&eacute;couvrir notre blog">The Blog</a></span>
+		<span class="en to-blog"><a href="http://pari-grandir.blogspot.fr/" alt="Click here to read our blog" title="Read our blog">The Blog</a></span>
+	</header>
+EOT;
+}
+
 function pg_get_nav() 
 {
+	// Declare global $pages here. Used later for other nav elements.
+	global $pages;
+
+	// Already existing $post global.
 	global $post;
 
 	echo '<nav class="top">' . "\n";
@@ -10,7 +28,7 @@ function pg_get_nav()
 		'sort_column' => 'menu_order'
 	));
 	$i = 0;
-	foreach ($pages as $page) {
+	foreach ($pages as $key => $page) {
 		// Parse content.
 		$page_id = $page->ID;
 		$page_title = array(
@@ -36,7 +54,7 @@ function pg_get_nav()
 
 				// Go one level deep and build submenu.
 				$subpages = get_page_children($page_id, $pages);
-				foreach ($subpages as $subpage) {
+				foreach ($subpages as $subkey => $subpage) {
 					$subpage_id = $subpage->ID;
 					$subpage_permalink = get_permalink($subpage_id);
 					$subpage_title = array(
@@ -62,27 +80,64 @@ function pg_get_nav()
 				echo '</li>' . "\n";
 			}
 
+			// Remove element from array.
+			unset($pages[$key]);
+
 			$i++;
+
+			if ($i == 10) break;
 		}
 	}
-
-	/*echo '<li class="menu-1">Hello</li>' . "\n";
-	echo '<li class="menu-2">Hello</li>' . "\n";
-	echo '<li class="menu-3">Hello</li>' . "\n";
-	echo '<li class="menu-4">Hello</li>' . "\n";
-	echo '<li class="menu-5">Hello</li>' . "\n";
-	echo '<li class="menu-6">Hello</li>' . "\n";
-	echo '<li class="menu-7">Hello</li>' . "\n";
-	echo '<li class="menu-8">Hello</li>' . "\n";
-	echo '<li class="menu-9">Hello</li>' . "\n";*/
 
 	echo '</ul>' . "\n";
 	echo '</nav>' . "\n";
 	echo '<nav id="flyout-container"></nav>' . "\n";
-
 }
 
-function pg_has_children($page_id) {
+function pg_get_footer_tabs() {
+	global $pages;
+	$i = 0;
+
+	echo '<section class="tabs">' . "\n";
+	echo '	<ul>' . "\n";
+
+	foreach ($pages as $key => $page) {
+		if ($page->post_parent == 0) {
+			// Parse content.
+			$page_id = $page->ID;
+			$page_title = array(
+				'fr' => $page->post_title,
+				'en' => ''
+			);
+			$permalink = get_permalink($page_id);
+
+			echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . '">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en">' . $page_title['en'] . '</a></li>' . "\n";
+			
+			unset($pages[$key]);
+			$i++;
+
+			if ($i == 4) break;
+		}
+	}
+
+	echo '	</ul>' . "\n";
+	echo '</section>' . "\n";
+}
+
+function pg_get_social() 
+{
+	echo <<<EOT
+	<div class="social">
+		<span class="fb">
+				<a class="fr" href="https://www.facebook.com/pages/Pari-Grandir/190695747698973" target="_blank" alt="Cliquez ici pour nous retrouver sur Facebook" title="Retrouvez-nous sur Facebook">Retrouvez-nous sur Facebook</a>
+				<a class="en" href="https://www.facebook.com/pages/Pari-Grandir/190695747698973" target="_blank" alt="Click here to join us on Facebook" title="Join us on Facebook">Join us on Facebook</a>
+		</span>
+	</div>
+EOT;
+}
+
+function pg_has_children($page_id) 
+{
 	$children = get_pages("child_of=$page_id");
 	if (count($children) != 0) { return true; }
 	else { return false; } 
