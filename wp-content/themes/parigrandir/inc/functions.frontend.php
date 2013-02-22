@@ -1,4 +1,9 @@
 <?php
+/**
+ * Bilinguism across the website needs session for state management.
+ * The wp-config.php file at the root of the PHP install has been hacked 
+ * with a couple of line at its very beginning to enable session management.
+ */
 add_action('init', 'start_session', 1);
 add_action('wp_logout', 'stop_session');
 add_action('wp_login', 'stop_session');
@@ -35,6 +40,10 @@ function ajax_switch_lang()
 	die(json_encode($result));
 }
 
+/**
+ * LAYOUT FUNCTIONS
+ * =================================================================================================
+ */
 function pg_get_header()
 {
 	echo <<<EOT
@@ -57,8 +66,8 @@ EOT;
 
 function pg_get_nav() 
 {
-	// Declare global $pages here. Used later for other nav elements.
-	global $pages;
+	// Declare global $all_pages here. Used later for other nav elements.
+	global $all_pages;
 
 	// Already existing $post global.
 	global $post;
@@ -66,20 +75,19 @@ function pg_get_nav()
 	echo '<nav class="top">' . "\n";
 	echo '<ul>' . "\n";
 	
-	$pages = get_pages(array(
+	$all_pages = get_pages(array(
 		'sort_column' => 'menu_order'
 	));
+
+	//var_dump(count($all_pages));
 	$i = 0;
-	foreach ($pages as $key => $page) {
+	foreach ($all_pages as $key => $page) {
 		// Parse content.
 		$page_id = $page->ID;
+		$custom = get_post_custom($page_id);
 		$page_title = array(
 			'fr' => $page->post_title,
-			'en' => ''
-		);
-		$page_content = array(
-			'fr' => $page->post_content,
-			'en' => ''
+			'en' => $custom['en_title'][0]
 		);
 		$permalink = get_permalink($page_id);
 
@@ -95,16 +103,12 @@ function pg_get_nav()
 				echo '	<ul class="submenu submenu-item-' . $i .'">' . "\n";
 
 				// Go one level deep and build submenu.
-				$subpages = get_page_children($page_id, $pages);
+				$subpages = get_page_children($page_id, $all_pages);
 				foreach ($subpages as $subkey => $subpage) {
 					$subpage_id = $subpage->ID;
 					$subpage_permalink = get_permalink($subpage_id);
 					$subpage_title = array(
 						'fr' => $subpage->post_title,
-						'en' => ''
-					);
-					$subpage_content = array(
-						'fr' => $subpage->post_content,
 						'en' => ''
 					);
 					echo '		<li>' . "\n";
@@ -123,7 +127,7 @@ function pg_get_nav()
 			}
 
 			// Remove element from array.
-			unset($pages[$key]);
+			unset($all_pages[$key]);
 
 			$i++;
 
@@ -138,12 +142,12 @@ function pg_get_nav()
 
 function pg_get_extra_links() 
 {
-	global $pages;
+	global $all_pages;
 
 	$terms = null;
 	$jobs = null;
 
-	foreach ($pages as $page) {
+	foreach ($all_pages as $page) {
 		if ($page->post_parent == 0) {
 			if ($page->post_name == "mentions-legales") $terms = $page;
 			else if ($page->post_name == "recrutement") $jobs = $page;
@@ -174,13 +178,13 @@ EOT;
 
 function pg_get_footer_tabs() 
 {
-	global $pages;
+	global $all_pages;
 	$i = 0;
 
 	echo '<section class="tabs">' . "\n";
 	echo '	<ul>' . "\n";
 
-	foreach ($pages as $key => $page) {
+	foreach ($all_pages as $key => $page) {
 		if ($page->post_parent == 0) {
 
 			// Parse content.
@@ -193,7 +197,7 @@ function pg_get_footer_tabs()
 
 			echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . '">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en tab-' . $i . '">' . $page_title['en'] . '</a></li>' . "\n";
 			
-			unset($pages[$key]);
+			unset($all_pages[$key]);
 			$i++;
 
 			if ($i == 4) break;
@@ -216,6 +220,10 @@ function pg_get_social()
 EOT;
 }
 
+/**
+ * UTILS
+ * =================================================================================================
+ */
 function pg_has_children($page_id) 
 {
 	$children = get_pages("child_of=$page_id");

@@ -6,7 +6,7 @@
     	Language switch mechanism
     */
 
-    var $flyOutParents, $flyoutContainer, $langSwitch, setLang;
+    var $flyOutParents, $flyoutContainer, $images, $langSwitch, $slideshowContainer, index, setLang, showImage, tick, timer;
     $langSwitch = $('.lang-switch');
     $langSwitch.click(function(e) {
       $.ajax({
@@ -68,7 +68,47 @@
     */
 
     setLang($('meta[name="current_lang"]').attr('content'));
-    return console.log($('meta[name="current_lang"]').attr('content'));
+    /*
+    	Show content.
+    */
+
+    $('body').animate({
+      'opacity': 1
+    }, 500);
+    /*
+    	Homepage: build and show gallery.
+    */
+
+    $.fn.exists = function() {
+      return this.length !== 0;
+    };
+    $images = $('#page-accueil .welcome img');
+    if ($images.exists()) {
+      $slideshowContainer = $('.slideshow');
+      $images.each(function(i, img) {
+        $(img).addClass('slide');
+        return $slideshowContainer.append(img);
+      });
+      timer = 3000;
+      index = 0;
+      showImage = function(index) {
+        return $images.each(function(i, img) {
+          if (index === i) {
+            return $(img).fadeIn(1000);
+          } else {
+            return $(img).fadeOut(1000);
+          }
+        });
+      };
+      return tick = setInterval(function() {
+        showImage(index);
+        if (index < $images.length - 1) {
+          return index++;
+        } else {
+          return index = 0;
+        }
+      }, timer);
+    }
   });
 
 }).call(this);

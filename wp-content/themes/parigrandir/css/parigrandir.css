@@ -1,5 +1,12 @@
 body {
 	background-image: url(../img/bg.jpg);
+
+		/* Hidden by default and enabled by javascript to avoid FOUC (Flash Of Unstyled Content) */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+	opacity: 0;
 }
 
 #wrapper { 
@@ -695,6 +702,18 @@ footer .tabs .tab-3  {
 	background: url(../img/home_pic_box.png) no-repeat;
 }
 
+#page-accueil .slideshow img {
+	position: absolute;
+}
+
+#page-accueil .slideshow .slide {
+	width: 652px;
+	height: 311px;
+	overflow: hidden;
+	top: 23px;
+	left: 31px;
+}
+
 #page-accueil .newsbox {
 	position: relative;
 	float: left;
@@ -722,6 +741,10 @@ footer .tabs .tab-3  {
 	padding: 0 40px;
 	min-height: 200px;
 	margin-left: 25px;
+}
+
+#page-accueil .welcome img {
+	display: none;	/* Hide images loaded from post_content to "welcome" sections. */
 }
 
 #page-accueil .welcome h2 {
