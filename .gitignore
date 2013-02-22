@@ -19,6 +19,9 @@
 # specify.
 wp-content/plugins/*
 
+# Ignore uploads.
+wp-content/uploads/*
+
 # Ignore everything in the "themes" directory, except the themes you.
 wp-content/themes/*
 !wp-content/themes/parigrandir/
