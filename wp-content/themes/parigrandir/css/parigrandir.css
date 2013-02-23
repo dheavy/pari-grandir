@@ -2,11 +2,11 @@ body {
 	background-image: url(../img/bg.jpg);
 
 		/* Hidden by default and enabled by javascript to avoid FOUC (Flash Of Unstyled Content) */
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	/*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter: alpha(opacity=0);
 	-moz-opacity: 0;
 	-khtml-opacity: 0;
-	opacity: 0;
+	opacity: 0;*/
 }
 
 #wrapper { 

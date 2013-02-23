@@ -25,7 +25,17 @@ function stop_session() {
 if (!isset($_SESSION['current_lang'])) 
 	$_SESSION['current_lang'] = 'fr';
 
-add_action( 'wp_ajax_switch', 'ajax_switch_lang' );
+$requested_lang = $_GET['lang'];
+if ($requested_lang == 'fr' || $requested_lang == 'en') {
+	$_SESSION['current_lang'] = $requested_lang;
+	//$result = array('success' => $_SESSION['current_lang']);
+} else {
+	//$result = array('error' => 'fr or en only');
+}
+
+/*
+add_action('wp_ajax_switch', 'ajax_switch_lang');
+add_action('wp_ajax_nopriv_switch', 'ajax_switch_lang');
 function ajax_switch_lang()
 {
 	$result = array();
@@ -39,6 +49,7 @@ function ajax_switch_lang()
 	header("Content-Type: text/json");
 	die(json_encode($result));
 }
+*/
 
 /**
  * LAYOUT FUNCTIONS
@@ -54,8 +65,8 @@ function pg_get_header()
 		<h1 class="en"><a href="/" alt="Click here to go back to homepage" title="Back to homepage">Pari-Grandir | Centre ludo-&eacute;ducatif bilingue</a></h1>
 		<div class="header-links">		
 			<div id="lang-switchers">
-				<div class="lang-switch"><a href="#" class="to-fr" data-lang="fr">fran&ccedil;ais</a></div>
-				<div class="lang-switch"><a href="#" class="to-en" data-lang="en">english</a></div>
+				<div class="lang-switch"><a href="?lang=fr" class="to-fr" data-lang="fr">fran&ccedil;ais</a></div>
+				<div class="lang-switch"><a href="?lang=en" class="to-en" data-lang="en">english</a></div>
 			</div>
 			<span class="fr to-blog"><a href="http://pari-grandir.blogspot.fr/" alt="Cliquer ici pour d&eacute;couvrir notre blog" title="D&eacute;couvrir notre blog">The Blog</a></span>
 			<span class="en to-blog"><a href="http://pari-grandir.blogspot.fr/" alt="Click here to read our blog" title="Read our blog">The Blog</a></span>
