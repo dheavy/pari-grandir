@@ -10,8 +10,8 @@
  * - news (fr)
  * - news (en)
  * 
- * Preparing a WP image gallery via "bienvenue" makes it appear 
- * as image slideshow of the homepage.
+ * Inserting images in "bienvenue" (fr) makes them appear 
+ * as an image slideshow on the homepage.
  */
 
 /**
