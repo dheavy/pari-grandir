@@ -28,28 +28,7 @@ if (!isset($_SESSION['current_lang']))
 $requested_lang = $_GET['lang'];
 if ($requested_lang == 'fr' || $requested_lang == 'en') {
 	$_SESSION['current_lang'] = $requested_lang;
-	//$result = array('success' => $_SESSION['current_lang']);
-} else {
-	//$result = array('error' => 'fr or en only');
-}
-
-/*
-add_action('wp_ajax_switch', 'ajax_switch_lang');
-add_action('wp_ajax_nopriv_switch', 'ajax_switch_lang');
-function ajax_switch_lang()
-{
-	$result = array();
-	$requested_lang = $_GET['lang'];
-	if ($requested_lang == 'fr' || $requested_lang == 'en') {
-		$_SESSION['current_lang'] = $requested_lang;
-		$result = array('success' => $_SESSION['current_lang']);
-	} else {
-		$result = array('error' => 'fr or en only');
-	}
-	header("Content-Type: text/json");
-	die(json_encode($result));
-}
-*/
+} 
 
 /**
  * LAYOUT FUNCTIONS
@@ -116,11 +95,18 @@ function pg_get_nav()
 				// Go one level deep and build submenu.
 				$subpages = get_page_children($page_id, $all_pages);
 				foreach ($subpages as $subkey => $subpage) {
+
 					$subpage_id = $subpage->ID;
+
+					// Only display the first level of subpages... ignore the rest.
+					$subpage_parent = get_page($subpage->post_parent);
+					if ($subpage_parent->post_parent != 0) continue;
+
+					$subpage_custom = get_post_custom($subpage_id);
 					$subpage_permalink = get_permalink($subpage_id);
 					$subpage_title = array(
 						'fr' => $subpage->post_title,
-						'en' => ''
+						'en' => $subpage_custom['en_title'][0]
 					);
 					echo '		<li>' . "\n";
 					echo '			<span class="fr"><a href="' . $subpage_permalink . '" alt="Aller &agrave; la rubrique ' . $subpage_title['fr'] . '" title="Aller &agrave; la rubrique ' . $subpage_title['fr'] . '">' . $subpage_title['fr'] . '</a></span>' . "\n";
@@ -133,7 +119,15 @@ function pg_get_nav()
 			} else {
 				echo '<li class="menu menu-item menu-item-' . $i . '">' . "\n";
 				echo '<span class="fr"><a href="' . $permalink . '" alt="Aller &agrave; la rubrique ' . $page_title['fr'] . '" title="Aller &agrave; la rubrique ' . $page_title['fr'] . '">' . $page_title['fr'] . '</a></span>' . "\n";
-				echo '<span class="en"><a href="' . $permalink . '" alt="Go to ' . $page_title['en'] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
+				
+				// Some English translations may be too long to fit on the menu thumbnails:
+				// count character and reduce font size and line height locally if needed.
+				if (strlen($page_title['en']) <= 24) {
+					echo '<span class="en"><a href="' . $permalink . '" alt="Go to ' . $page_title['en'][0] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
+				} else {
+					echo '<span class="en"><a class="smaller" href="' . $permalink . '" alt="Go to ' . $page_title['en'] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
+				}
+
 				echo '</li>' . "\n";
 			}
 
@@ -169,9 +163,13 @@ function pg_get_extra_links()
 	$jobs_permalinks = get_permalink($jobs->ID);
 
 	$terms_title_fr = $terms->post_title;
-	$terms_title_en = 'Terms &amp; Conditions';
 	$jobs_title_fr = $jobs->post_title;
-	$jobs_title_en = 'Jobs';
+
+	$terms_custom = get_post_custom($terms->ID);
+	$jobs_custom = get_post_custom($jobs->ID);
+
+	$terms_title_en = $terms_custom['en_title'][0];
+	$jobs_title_en = $jobs_custom['en_title'][0];
 
 	echo <<<EOT
 	<div class="extra-links">
@@ -200,14 +198,22 @@ function pg_get_footer_tabs()
 
 			// Parse content.
 			$page_id = $page->ID;
+			$custom = get_post_custom($page_id);
+
 			$page_title = array(
 				'fr' => $page->post_title,
-				'en' => ''
+				'en' => $custom['en_title'][0]
 			);
 			$permalink = get_permalink($page_id);
 
-			echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . '">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en tab-' . $i . '">' . $page_title['en'] . '</a></li>' . "\n";
-			
+			// Some English translations may be too long to fit on the menu thumbnails:
+			// count character and reduce font size and top padding locally if needed.
+			if (strlen($page_title['en']) <= 15) {
+				echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . '">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en tab-' . $i . '">' . $page_title['en'] . '</a></li>' . "\n";
+			} else {
+				echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . '">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en tab-' . $i . ' smaller">' . $page_title['en'] . '</a></li>' . "\n";
+			}
+
 			unset($all_pages[$key]);
 			$i++;
 

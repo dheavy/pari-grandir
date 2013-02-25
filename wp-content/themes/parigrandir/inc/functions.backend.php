@@ -16,23 +16,34 @@ switch ($template_file)
 		require_once('backend/functions.page-presentation.php');
 		break;
 
+	case 'page-atelierbebeetparents.php':
 	case 'page-atelierbebeetparents-massagebebe.php':
 	case 'page-atelierbebeetparents-babygym.php':
 	case 'page-atelierbebeetparents-chanteravecbebe.php':
 		require_once('backend/functions.page-atelierbebeetparents.php');
 		break;
 
+	case 'page-atelierenfants.php':
+	case 'page-atelierenfants-20mois3ans.php':
+	case 'page-atelierenfants-3ans6ans.php':
+	case 'page-atelierenfants-6ans10ans.php':
 	case 'page-atelierenfants-20mois3ans-eveilmusical.php':
 	case 'page-atelierenfants-20mois3ans-gymmotricite.php':
 	case 'page-atelierenfants-20mois3ans-prepaabc.php':
 	case 'page-atelierenfants-3ans6ans-anglais.php':
 	case 'page-atelierenfants-3ans6ans-artsplastiques.php':
-	case 'page-atelierenfants-3ans6ans-momentsmusicaux.php':
+	case 'page-atelierenfants-3ans6ans-musiqueettheatre.php':
 	case 'page-atelierenfants-3ans6ans-theatre.php':
 	case 'page-atelierenfants-3ans6ans-yogakids.php':
+	case 'page-atelierenfants-6ans10ans-anglais.php':
+	case 'page-atelierenfants-6ans10ans-artsplastiques.php':
+	case 'page-atelierenfants-6ans10ans-musiqueettheatre.php':
+	case 'page-atelierenfants-6ans10ans-theatre.php':
+	case 'page-atelierenfants-6ans10ans-yogakids.php':
 		require_once('backend/functions.page-atelierenfants.php');
 		break;
 
+	case 'page-atelieradultes.php':
 	case 'page-atelieradultes-chantprenatal.php':
 	case 'page-atelieradultes-portagebebe.php':
 	case 'page-atelieradultes-sophrologie.php':
@@ -41,6 +52,7 @@ switch ($template_file)
 		require_once('backend/functions.page-atelieradultes.php');
 		break;
 
+	case 'page-planningettarifs.php':
 	case 'page-planningettarifs-3a6ans.php':
 	case 'page-planningettarifs-6a10ans.php':
 	case 'page-planningettarifs-adultebebe.php':

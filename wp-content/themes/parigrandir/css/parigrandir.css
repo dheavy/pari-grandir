@@ -108,6 +108,12 @@ nav.top ul a:hover {
 	text-transform: uppercase;
 }   
 
+nav.top ul a.smaller {
+	font-size: 9px;
+	line-height: 9px;
+	padding-top: 27px;
+}
+
 li.menu {
 	list-style: none;
 	display: inline;
@@ -398,7 +404,7 @@ ul.submenu a {
 	display: block;
 	text-align: center;
 	margin-top: 41px;
-	padding-top: 30px;
+	padding-top: 25px;
 	height: 80px;
 	background-image: url(../img/spritesheet.png);
 	background-repeat: no-repeat;
@@ -456,7 +462,7 @@ ul.submenu a {
 	top: 50px;
 	width: 155px;
 	margin-left: 20px;
-	padding: 58px 0 0 0;
+	padding: 66px 0 0 0;
 	margin-top: -102px !important;
 	background: transparent url(../img/spritesheet.png) no-repeat -800px -252px;
 	height: 74px;
@@ -601,6 +607,11 @@ footer .tabs a {
 	background: url(../img/spritesheet.png) -298px -943px no-repeat;
 	padding-left: 18px;
 	padding-right: 18px;
+}
+
+footer .tabs a.smaller {
+	font-size: 10px;
+	padding-top: 15px;
 }
 
 footer .tabs a:hover {
