@@ -9,6 +9,8 @@
  * - quisommesnous (en)
  * - lecentre (fr)
  * - lecentre (en)
+ * - lequipe (fr)
+ * - lequipe (en)
  * - sponsors (fr)
  * - sponsors (en)
  */
@@ -25,6 +27,8 @@ function pg_add_meta_boxes()
 	add_meta_box('en_quisommesnous', __('Qui sommes nous - English text'), 'create_en_quisommesnous_field', 'page');
 	add_meta_box('fr_lecentre', __('Le Centre Pari Grandir - French text'), 'create_fr_lecentre_field', 'page');
 	add_meta_box('en_lecentre', __('Le Centre Pari Grandir - English text'), 'create_en_lecentre_field', 'page');
+	add_meta_box('fr_lequipe', __('Equipe - French text'), 'create_fr_lequipe_field', 'page');
+	add_meta_box('en_lequipe', __('Equipe - English text'), 'create_en_lequipe_field', 'page');
 	add_meta_box('fr_sponsors', __('Partenaires et sponsors - French text'), 'create_fr_sponsors_field', 'page');
 	add_meta_box('en_sponsors', __('Partenaires et sponsors - English text'), 'create_en_sponsors_field', 'page');
 
@@ -63,10 +67,25 @@ function pg_add_meta_boxes()
 		wp_editor($en_lecentre, 'admin-en-lecentre', array('media_buttons' => true));
 	}
 
+	function create_fr_lequipe_field($post) 
+	{
+		$custom = get_post_custom($post->ID);
+		$fr_lequipe = $custom['fr_lequipe'][0];
+		wp_editor($fr_lequipe, 'admin-fr-lequipe', array('media_buttons' => true));
+	}
+
+	function create_en_lequipe_field($post) 
+	{
+		$custom = get_post_custom($post->ID);
+		$en_lequipe = $custom['en_lequipe'][0];
+		wp_editor($en_lequipe, 'admin-en-lequipe', array('media_buttons' => true));
+	}
+
 	function create_fr_sponsors_field($post) 
 	{
 		$custom = get_post_custom($post->ID);
 		$fr_sponsors = $custom['fr_sponsors'][0];
+		echo '<p><label for="wp-admin-fr-wrap"><strong>Place sponsors logos here only, just once, not in the English textfield</strong>, they will be used for both the French and English versions.</label></p>';
 		wp_editor($fr_sponsors, 'admin-fr-sponsors', array('media_buttons' => true));
 	}
 
@@ -104,6 +123,8 @@ function pg_save_accueil_postdata()
 	$en_quisommesnous = $_POST['admin-en-quisommesnous'];
 	$fr_lecentre = $_POST['admin-fr-lecentre'];
 	$en_lecentre = $_POST['admin-en-lecentre'];
+	$fr_lequipe = $_POST['admin-fr-lequipe'];
+	$en_lequipe = $_POST['admin-en-lequipe'];
 	$fr_sponsors = $_POST['admin-fr-sponsors'];
 	$en_sponsors = $_POST['admin-en-sponsors'];
 
@@ -112,6 +133,8 @@ function pg_save_accueil_postdata()
 	add_post_meta($post->ID, 'en_quisommesnous', $en_quisommesnous, true) or update_post_meta($post->ID, 'en_quisommesnous', $en_quisommesnous);
 	add_post_meta($post->ID, 'fr_lecentre', $fr_lecentre, true) or update_post_meta($post->ID, 'fr_lecentre', $fr_lecentre);
 	add_post_meta($post->ID, 'en_lecentre', $en_lecentre, true) or update_post_meta($post->ID, 'en_lecentre', $en_lecentre);
+	add_post_meta($post->ID, 'fr_lequipe', $fr_lequipe, true) or update_post_meta($post->ID, 'fr_lequipe', $fr_lequipe);
+	add_post_meta($post->ID, 'en_lequipe', $en_lequipe, true) or update_post_meta($post->ID, 'en_lequipe', $en_lequipe);
 	add_post_meta($post->ID, 'fr_sponsors', $fr_sponsors, true) or update_post_meta($post->ID, 'fr_sponsors', $fr_sponsors);
 	add_post_meta($post->ID, 'en_sponsors', $en_sponsors, true) or update_post_meta($post->ID, 'en_sponsors', $en_sponsors);
 }

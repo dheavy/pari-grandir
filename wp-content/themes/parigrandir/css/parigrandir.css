@@ -673,14 +673,13 @@ footer .tabs .tab-3  {
 	height: 21px;
 }
 
-#page-accueil {
+#page-accueil, #page-presentation {
 	position: relative;
 	width: 1030px;
 	font-size: 12px;
 }
 
-#page-accueil .top {
-	background: url(../img/header_white.png) no-repeat;
+#page-accueil .top, #page-presentation .top {
 	width: 100%;
 	height: 70px;
 	position: relative;
@@ -688,7 +687,15 @@ footer .tabs .tab-3  {
 	margin-top: -14px;
 }
 
-#page-accueil .content {
+#page-accueil .top {
+	background: url(../img/header_white.png) no-repeat;
+}
+
+#page-presentation .top {
+	background: url(../img/header_orange_red.png) no-repeat;
+}
+
+#page-accueil .content, #page-presentation .content {
 	position: relative;
 	float: left;
 	width: 100%;
@@ -696,7 +703,7 @@ footer .tabs .tab-3  {
 	background: url(../img/bg_without_footer2.png) no-repeat;
 }
 
-#page-accueil .content-area {
+#page-accueil .content-area, #page-presentation .content-area {
 	position: relative;
 	float: left;
 	width: 100%;
@@ -801,10 +808,161 @@ footer .tabs .tab-3  {
 	background: url(../img/spritesheet.png) no-repeat -1703px -499px;
 }
 
-#page-accueil .footer {
+#page-accueil .footer, #page-presentation .footer {
 	position: relative;
 	float: left;
 	width: 100%;
 	height: 35px;
+}
+
+#page-accueil .footer {
 	background: url(../img/bg_footer.png) no-repeat;
+}
+
+#page-presentation .footer {
+	background: url(../img/bg_footer_orange_red.png) no-repeat;
+}
+
+#page-presentation .left-col {
+	width: 665px;
+	padding-left: 5px;
+	position: relative;
+	float: left;
+}
+
+#page-presentation .right-col {
+	width: 310px;
+	min-height: 100px;
+	position: relative;
+	float: left;
+}
+
+#page-presentation .quisommesnous {
+	position: relative;
+	display: block;
+	margin-left: 30px;
+	padding: 20px 5px;
+	width: 600px;
+}
+
+#page-presentation .lecentre {
+	position: relative;
+	float: left;
+	width: 590px;
+	height: 310px;
+	margin-left: 18px;
+	padding: 25px 25px 0 25px;
+	background: url(../img/presentation_middlebg.jpg) no-repeat;
+}
+
+#page-presentation .lequipe	 {
+	position: relative;
+	float: left;
+	width: 600px;
+	height: 180px;
+	margin-left: 30px;
+	padding: 5px 30px 5px 10px;
+	background: url(../img/presentation_orange.jpg) no-repeat;
+}
+
+#page-presentation .lecentre img {
+	margin-top: -50px !important;
+}
+
+#page-presentation .sponsors {
+	position: relative;
+	width: 270px;
+	height: 600px;
+	top: 55px;
+	padding: 15px 30px;
+	background: url(../img/presentation_rhs.jpg) no-repeat;
+}
+
+#page-presentation .sponsors .images {
+	text-align: center;
+	padding-top: 40px;
+}
+
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
 }

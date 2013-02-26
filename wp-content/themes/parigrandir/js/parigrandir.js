@@ -5,23 +5,9 @@ $(document).ready(function() {
   	Language switch mechanism
   */
 
-  var $flyOutParents, $flyoutContainer, $images, $langSwitch, $slideshowContainer, index, setLang, showImage, tick, timer;
+  var $flyOutParents, $flyoutContainer, $imagesContainer, $imagesSponsors, $imagesWelcome, $langSwitch, $slideshowContainer, $sponsors, index, setLang, showImage, tick, timer;
   $langSwitch = $('.lang-switch');
   console.log($langSwitch);
-  /*
-  	$langSwitch.click (e) ->
-  		$.ajax(
-  			url: 'wp-admin/admin-ajax.php'
-  			data: { action: 'switch', lang: e.target.getAttribute 'data-lang' }
-  			complete: (xhr) ->
-  				if $.parseJSON(xhr.responseText).success?
-  					lang = $.parseJSON(xhr.responseText).success
-  					setLang lang
-  		)
-  		return false;
-  	return;
-  */
-
   /*
   	Display proper language
   */
@@ -66,30 +52,27 @@ $(document).ready(function() {
 
   setLang($('meta[name="current_lang"]').attr('content'));
   /*
-  	Show content.
-  */
-
-  /*$('body').animate('opacity': 1, 500)
-  */
-
-  /*
-  	Homepage: build and show gallery.
+  	Extend jQuery to check if a jQuery selector is empty.
   */
 
   $.fn.exists = function() {
     return this.length !== 0;
   };
-  $images = $('#page-accueil .welcome img');
-  if ($images.exists()) {
+  /*
+  	Get images loaded in the "welcome" section of the homepage.
+  */
+
+  $imagesWelcome = $('#page-accueil .welcome img');
+  if ($imagesWelcome.exists()) {
     $slideshowContainer = $('.slideshow');
-    $images.each(function(i, img) {
+    $imagesWelcome.each(function(i, img) {
       $(img).addClass('slide');
       return $slideshowContainer.append(img);
     });
     timer = 3000;
     index = 0;
     showImage = function(index) {
-      return $images.each(function(i, img) {
+      return $imagesWelcome.each(function(i, img) {
         if (index === i) {
           return $(img).fadeIn(1000);
         } else {
@@ -97,13 +80,26 @@ $(document).ready(function() {
         }
       });
     };
-    return tick = setInterval(function() {
+    tick = setInterval(function() {
       showImage(index);
-      if (index < $images.length - 1) {
+      if (index < $imagesWelcome.length - 1) {
         return index++;
       } else {
         return index = 0;
       }
     }, timer);
+  }
+  /*
+  	Get links (images, basically) loaded in the "sponsors" section of /presentation
+  */
+
+  $imagesSponsors = $('#page-presentation .sponsors a');
+  if ($imagesSponsors.exists()) {
+    $sponsors = $('.sponsors');
+    $imagesContainer = $('.images');
+    $imagesSponsors.each(function(i, img) {
+      return $imagesContainer.append(img);
+    });
+    return $sponsors.append($imagesContainer);
   }
 });
