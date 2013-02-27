@@ -25,8 +25,8 @@ function pg_add_meta_boxes()
 	add_meta_box('en_main', __('Main text - English text'), 'create_en_main_field', 'page');
 	add_meta_box('fr_schedule', __('Horaires / Schedule - French text'), 'create_fr_schedule_field', 'page');
 	add_meta_box('en_schedule', __('Horaires / Schedule - English text'), 'create_en_schedule_field', 'page');
-	add_meta_box('fr_costs', __('Tarifs / Costs - French text'), 'create_fr_costs_field', 'page');
-	add_meta_box('en_costs', __('Tarifs / Costs - English text'), 'create_en_costs_field', 'page');
+	add_meta_box('fr_costs', __('Tarifs / Fees - French text'), 'create_fr_costs_field', 'page');
+	add_meta_box('en_costs', __('Tarifs / Fees - English text'), 'create_en_costs_field', 'page');
 
 	function create_en_title_field($post) 
 	{

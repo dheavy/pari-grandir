@@ -668,7 +668,8 @@ footer .tabs .tab-3  {
 
 #page-accueil, 
 #page-presentation,
-#page-atelierbebeparents {
+#page-atelierbebeparents,
+#page-atelierenfants {
 	position: relative;
 	width: 1030px;
 	font-size: 12px;
@@ -676,7 +677,8 @@ footer .tabs .tab-3  {
 
 #page-accueil .top, 
 #page-presentation .top,
-#page-atelierbebeparents .top {
+#page-atelierbebeparents .top,
+#page-atelierenfants .top {
 	width: 100%;
 	height: 70px;
 	position: relative;
@@ -696,9 +698,14 @@ footer .tabs .tab-3  {
 	background: url(../img/header_yellow.png) no-repeat;
 }
 
+#page-atelierenfants .top {
+	background: url(../img/header_light_blue.png) no-repeat;
+}
+
 #page-accueil .content, 
 #page-presentation .content,
-#page-atelierbebeparents .content {
+#page-atelierbebeparents .content,
+#page-atelierenfants .content {
 	position: relative;
 	float: left;
 	width: 100%;
@@ -709,7 +716,8 @@ footer .tabs .tab-3  {
 
 #page-accueil .content-area, 
 #page-presentation .content-area,
-#page-atelierbebeparents .content-area {
+#page-atelierbebeparents .content-area,
+#page-atelierenfants .content-area {
 	position: relative;
 	float: left;
 	width: 100%;
@@ -816,7 +824,8 @@ footer .tabs .tab-3  {
 
 #page-accueil .footer, 
 #page-presentation .footer,
-#page-atelierbebeparents .footer {
+#page-atelierbebeparents .footer,
+#page-atelierenfants .footer {
 	position: relative;
 	float: left;
 	width: 100%;
@@ -833,6 +842,10 @@ footer .tabs .tab-3  {
 
 #page-atelierbebeparents .footer {
 	background: url(../img/bg_footer_yellow.png) no-repeat;
+}
+
+#page-atelierenfants .footer {
+	background: url(../img/bg_footer_light_blue.png) no-repeat;
 }
 
 #page-presentation .left-col {
@@ -952,7 +965,8 @@ footer .tabs .tab-3  {
 	line-height: 75%;
 }
 
-#page-atelierbebeparents .left-col {
+#page-atelierbebeparents .left-col,
+#page-atelierenfants .left-col {
 	position: relative;
 	width: 45%;
 	height: auto;
@@ -961,49 +975,112 @@ footer .tabs .tab-3  {
 	top: 60px;
 } 
 
-#page-atelierbebeparents .left-col h2 {
+#page-atelierbebeparents .left-col h2,
+#page-atelierenfants .left-col h2 {
 	font-family : Comic Sans MS, Comic Sans MS5, cursive, Arial;
-	color: #f2a823;
 	line-height: 26px;
 	text-transform: uppercase;
+}
+
+#page-atelierbebeparents .left-col h2 {
+	color: #f2a823;
+}
+
+#page-atelierenfants .left-col h2 {
+	color: #07c1e8;
+	margin-bottom: -15px;
 }
 
 #page-atelierbebeparents .left-col img {
 	margin: -4px 0;
 }
 
-#page-atelierbebeparents .right-col {
+#page-atelierbebeparents .right-col,
+#page-atelierenfants .right-col {
 	position: relative;
 	width: 49%;
 	height: auto;
 	float: left;
 }
 
-#page-atelierbebeparents .right-col .illustration {
+#page-atelierbebeparents .right-col .illustration,
+#page-atelierenfants .right-col .illustration {
 	position: relative;
 	width: 420px;
 	height: 220px;
 }
 
-.illustration-1 {
+#page-atelierbebeparents .right-col .illustration-1 {
 	background: url(../img/pic_32_le_massage_bebe.png) no-repeat;
 }
 
-.illustration-2 {
+#page-atelierbebeparents .right-col .illustration-2 {
 	background: url(../img/pic_32_la_gym_bebe.png) no-repeat;
 }
 
-.illustration-3 {
+#page-atelierbebeparents .right-col .illustration-3 {
 	background: url(../img/pic_32_chanter_avec_bebe.png) no-repeat;
 }
 
-#page-atelierbebeparents .right-col .table {
+#page-atelierenfants .right-col .illustration-1 {
+	background: url(../img/pic_203_gym_motricite.png) no-repeat;
+}
+
+#page-atelierenfants .right-col .illustration-2 {
+	background: url(../img/pic_203_prepa_abc.png) no-repeat;
+}
+
+#page-atelierenfants .right-col .illustration-3 {
+	background: url(../img/pic_32_chanter_avec_bebe.png) no-repeat;
+}
+
+#page-atelierenfants .right-col .illustration-4 {
+	background: url(../img/pic_36_anglais.png) no-repeat;
+}
+
+#page-atelierenfants .right-col .illustration-5 {
+	background: url(../img/pic_36_theatre.png) no-repeat;
+}
+
+#page-atelierenfants .right-col .illustration-6 {
+	background: url(../img/pic_36_yoga_kids.png) no-repeat;
+}
+
+#page-atelierenfants .right-col .illustration-7 {
+	background: url(../img/pic_36_arts_plastiques.png) no-repeat;
+}
+
+#page-atelierenfants .right-col .illustration-8 {
+	background: url(../img/pic_36_arts_plastiques.png) no-repeat;
+}
+
+#page-atelierenfants .right-col .illustration-9 {
+	background: url(../img/pic_610_theatre.png) no-repeat;
+}
+
+#page-atelierenfants .right-col .illustration-10 {
+	background: url(../img/pic_610_yoga_kids.png) no-repeat;
+}
+
+#page-atelierenfants .right-col .illustration-11 {
+	background: url(../img/pic_610_arts_plastiques.png) no-repeat;
+}
+
+#page-atelierbebeparents .right-col .table,
+#page-atelierenfants .right-col .table {
 	position: relative;
 	width: 420px;
 	height: 295px;
-	background: url(../img/planning_tb_yellow.png) no-repeat;
 	margin-left: 30px;
 	text-align: right;
+}
+
+#page-atelierbebeparents .right-col .table {
+	background: url(../img/planning_tb_yellow.png) no-repeat;
+}
+
+#page-atelierenfants .right-col .table {
+	background: url(../img/planning_tb_blue.png) no-repeat;
 }
 
 #page-atelierbebeparents .right-col .table h3 {
@@ -1011,20 +1088,28 @@ footer .tabs .tab-3  {
 	margin-bottom: -10px;
 }
 
-#page-atelierbebeparents .right-col .schedule {
+#page-atelierenfants .right-col .table h3 {
+	color: #07c1e8;
+	margin-bottom: -10px;
+}
+
+#page-atelierbebeparents .right-col .schedule,
+#page-atelierenfants .right-col .schedule {
 	float: left;
 	margin-top: 95px;
 	margin-left: 70px;
 }
 
-#page-atelierbebeparents .right-col .costs {
+#page-atelierbebeparents .right-col .costs,
+#page-atelierenfants .right-col .costs {
 	float: left;
 	width: 140px;
 	margin-top: 95px;
 	margin-left: 50px;
 }
 
-#page-atelierbebeparents .headerinfo {
+#page-atelierbebeparents .headerinfo,
+#page-atelierenfants .headerinfo {
 	position: absolute;
 	text-align: right;
 	margin-left: 780px;
@@ -1033,8 +1118,47 @@ footer .tabs .tab-3  {
 	z-index: 2;
 	font-family: Comic Sans MS, Comic Sans MS5, cursive, Arial;
 	font-weight: bold;
-	color: #FFF;
 	font-size: 15px;
+}
+
+#page-atelierenfants .headerlinks {
+	position: absolute;
+	text-align: left;
+	margin-left: 50px;
+	margin-top: -35px;
+	width: 650px;
+	z-index: 2;
+	font-family: Comic Sans MS, Comic Sans MS5, cursive, Arial;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#page-atelierenfants .headerlinks ul, 
+#page-atelierenfants .headerlinks ul li {
+	display: inline;
+	margin: 0 20px 0 0;
+	padding: 30px 0 0 0;
+	text-transform: uppercase;
+}
+
+#page-atelierenfants .headerlinks a {
+	text-decoration: none;
+	color: #96e4f1;
+}
+
+#page-atelierenfants .headerlinks a:hover {
+	text-decoration: none;
+	color: #FFF;
+}
+
+#page-atelierenfants .headerlinks a.selected {
+	text-decoration: underline;
+	color: #FFF;
+}
+
+#page-atelierbebeparents .headerinfo,
+#page-atelierenfants .headerinfo {
+	color: #FFF;
 }
 
 /* =WordPress Core

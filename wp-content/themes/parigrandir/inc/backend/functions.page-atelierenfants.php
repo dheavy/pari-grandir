@@ -27,14 +27,14 @@ function pg_add_meta_boxes()
 
 	add_meta_box('en_title', __('Page title in English'), 'create_en_title_field', 'page');
 	add_meta_box('en_main', __('Main text - English text'), 'create_en_main_field', 'page');
-	add_meta_box('fr_headerlinks', __('Header information ("3 mois - 2 ans") - French text'), 'create_fr_headerlinks_field', 'page');
-	add_meta_box('en_headerlinks', __('Header information ("3 mois - 2 ans") - English text'), 'create_en_headerlinks_field', 'page');
-	add_meta_box('fr_headerinfo', __('Header links - French text'), 'create_fr_headerinfo_field', 'page');
-	add_meta_box('en_headerinfo', __('Header links ("3 mois - 2 ans") - English text'), 'create_en_headerinfo_field', 'page');
+	add_meta_box('fr_headerlinks', __('Header links - French text'), 'create_fr_headerlinks_field', 'page');
+	add_meta_box('en_headerlinks', __('Header links - English text'), 'create_en_headerlinks_field', 'page');
+	add_meta_box('fr_headerinfo', __('Header information ("3 mois - 2 ans") - French text'), 'create_fr_headerinfo_field', 'page');
+	add_meta_box('en_headerinfo', __('Header information ("3 mois - 2 ans") - English text'), 'create_en_headerinfo_field', 'page');
 	add_meta_box('fr_schedule', __('Horaires / Schedule - French text'), 'create_fr_schedule_field', 'page');
 	add_meta_box('en_schedule', __('Horaires / Schedule - English text'), 'create_en_schedule_field', 'page');
-	add_meta_box('fr_costs', __('Tarifs / Costs - French text'), 'create_fr_costs_field', 'page');
-	add_meta_box('en_costs', __('Tarifs / Costs - English text'), 'create_en_costs_field', 'page');
+	add_meta_box('fr_costs', __('Tarifs / Fees - French text'), 'create_fr_costs_field', 'page');
+	add_meta_box('en_costs', __('Tarifs / Fees - English text'), 'create_en_costs_field', 'page');
 
 	function create_en_title_field($post) 
 	{
@@ -157,5 +157,5 @@ function pg_save_accueil_postdata()
 	add_post_meta($post->ID, 'fr_schedule', $fr_schedule, true) or update_post_meta($post->ID, 'fr_schedule', $fr_schedule);
 	add_post_meta($post->ID, 'en_schedule', $en_schedule, true) or update_post_meta($post->ID, 'en_schedule', $en_schedule);
 	add_post_meta($post->ID, 'fr_costs', $fr_costs, true) or update_post_meta($post->ID, 'fr_costs', $fr_costs);
-	add_post_meta($post->ID, 'en_costs', $en_costs, true) or update_post_meta($post->ID, 'en_costs', $fr_costs);
+	add_post_meta($post->ID, 'en_costs', $en_costs, true) or update_post_meta($post->ID, 'en_costs', $en_costs);
 }
