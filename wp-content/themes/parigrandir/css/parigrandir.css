@@ -983,7 +983,18 @@ footer .tabs .tab-3  {
 	position: relative;
 	width: 420px;
 	height: 220px;
+}
+
+.illustration-1 {
 	background: url(../img/pic_32_le_massage_bebe.png) no-repeat;
+}
+
+.illustration-2 {
+	background: url(../img/pic_32_la_gym_bebe.png) no-repeat;
+}
+
+.illustration-3 {
+	background: url(../img/pic_32_chanter_avec_bebe.png) no-repeat;
 }
 
 #page-atelierbebeparents .right-col .table {
@@ -997,6 +1008,7 @@ footer .tabs .tab-3  {
 
 #page-atelierbebeparents .right-col .table h3 {
 	color: #F2A822;
+	margin-bottom: -10px;
 }
 
 #page-atelierbebeparents .right-col .schedule {
@@ -1007,6 +1019,7 @@ footer .tabs .tab-3  {
 
 #page-atelierbebeparents .right-col .costs {
 	float: left;
+	width: 140px;
 	margin-top: 95px;
 	margin-left: 50px;
 }

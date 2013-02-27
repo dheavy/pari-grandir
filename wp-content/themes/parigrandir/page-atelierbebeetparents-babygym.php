@@ -52,7 +52,7 @@ if (have_posts()):
 				</section>
 
 				<section class="right-col">
-					<div class="illustration"></div>
+					<div class="illustration illustration-2"></div>
 					<div class="table fr">
 						<span class="schedule"><?php echo $fr['schedule'] ?></span>
 						<span class="costs"><?php echo $fr['costs'] ?></span>
