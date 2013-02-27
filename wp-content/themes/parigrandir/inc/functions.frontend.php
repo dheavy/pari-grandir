@@ -54,7 +54,7 @@ function pg_get_header()
 EOT;
 }
 
-function pg_get_nav() 
+function pg_get_nav($p) 
 {
 	// Declare global $all_pages here. Used later for other nav elements.
 	global $all_pages;
@@ -87,10 +87,17 @@ function pg_get_nav()
 		// that we don't verify pages deeper than root and root+1 level.
 		if ($page->post_parent == 0) {
 			if (pg_has_children($page_id)) {
-				echo '<li class="menu menu-item menu-item-' . $i . '">' . "\n";
-				echo '	<span class="fr"><a class="has-flyout-menu" href="#" rel="nofollow" data-submenu="submenu-item-' . $i . '">' . $page_title['fr'] . '</a></span>' . "\n";
-				echo '	<span class="en"><a class="has-flyout-menu" href="#" rel="nofollow" data-submenu="submenu-item-' . $i . '">' . $page_title['en'] . '</a></span>' . "\n";
-				echo '	<ul class="submenu submenu-item-' . $i .'">' . "\n";
+				if ($p == $i) {
+					echo '<li class="menu menu-item menu-item-' . $i . '">' . "\n";
+					echo '	<span class="fr"><a class="selected has-flyout-menu" href="#" rel="nofollow" data-submenu="submenu-item-' . $i . '">' . $page_title['fr'] . '</a></span>' . "\n";
+					echo '	<span class="en"><a class="selected has-flyout-menu" href="#" rel="nofollow" data-submenu="submenu-item-' . $i . '">' . $page_title['en'] . '</a></span>' . "\n";
+					echo '	<ul class="submenu submenu-item-' . $i .'">' . "\n";
+				} else {
+					echo '<li class="menu menu-item menu-item-' . $i . '">' . "\n";
+					echo '	<span class="fr"><a class="has-flyout-menu" href="#" rel="nofollow" data-submenu="submenu-item-' . $i . '">' . $page_title['fr'] . '</a></span>' . "\n";
+					echo '	<span class="en"><a class="has-flyout-menu" href="#" rel="nofollow" data-submenu="submenu-item-' . $i . '">' . $page_title['en'] . '</a></span>' . "\n";
+					echo '	<ul class="submenu submenu-item-' . $i .'">' . "\n";
+				}
 
 				// Go one level deep and build submenu.
 				$subpages = get_page_children($page_id, $all_pages);
@@ -117,15 +124,28 @@ function pg_get_nav()
 				echo '	</ul>' . "\n";
 				echo '</li>' . "\n";
 			} else {
-				echo '<li class="menu menu-item menu-item-' . $i . '">' . "\n";
-				echo '<span class="fr"><a href="' . $permalink . '" alt="Aller &agrave; la rubrique ' . $page_title['fr'] . '" title="Aller &agrave; la rubrique ' . $page_title['fr'] . '">' . $page_title['fr'] . '</a></span>' . "\n";
-				
+				if ($p == $i) {
+					echo '<li class="menu menu-item menu-item-' . $i . '">' . "\n";
+					echo '<span class="fr"><a class="selected" href="' . $permalink . '" alt="Aller &agrave; la rubrique ' . $page_title['fr'] . '" title="Aller &agrave; la rubrique ' . $page_title['fr'] . '">' . $page_title['fr'] . '</a></span>' . "\n";
+				} else {
+					echo '<li class="menu menu-item menu-item-' . $i . '">' . "\n";
+					echo '<span class="fr"><a href="' . $permalink . '" alt="Aller &agrave; la rubrique ' . $page_title['fr'] . '" title="Aller &agrave; la rubrique ' . $page_title['fr'] . '">' . $page_title['fr'] . '</a></span>' . "\n";
+				}
+
 				// Some English translations may be too long to fit on the menu thumbnails:
 				// count character and reduce font size and line height locally if needed.
 				if (strlen($page_title['en']) <= 24) {
-					echo '<span class="en"><a href="' . $permalink . '" alt="Go to ' . $page_title['en'][0] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
+					if ($p == $i) {
+						echo '<span class="en"><a class="selected" href="' . $permalink . '" alt="Go to ' . $page_title['en'][0] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
+					} else {
+						echo '<span class="en"><a href="' . $permalink . '" alt="Go to ' . $page_title['en'][0] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
+					}
 				} else {
-					echo '<span class="en"><a class="smaller" href="' . $permalink . '" alt="Go to ' . $page_title['en'] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
+					if ($p == $i) {
+						echo '<span class="en"><a class="selected smaller" href="' . $permalink . '" alt="Go to ' . $page_title['en'] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
+					} else {
+						echo '<span class="en"><a class="smaller" href="' . $permalink . '" alt="Go to ' . $page_title['en'] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
+					}
 				}
 
 				echo '</li>' . "\n";

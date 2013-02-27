@@ -15,6 +15,15 @@
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url') ?>">
 	<link href="<?php bloginfo('template_directory') ?>/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
 	
+	<!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"></script>
+  <![endif]-->
 	<title><?php bloginfo('name') ?></title>
 </head>
 <body>
+	<!--[if lt IE 7]>
+  <p class=chromeframe>Your browser is <em>ancient!</em> 
+  <a href="http://browsehappy.com/">Upgrade to a different browser</a> or 
+  <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> 
+  to experience this site.</p>
+  <![endif]-->

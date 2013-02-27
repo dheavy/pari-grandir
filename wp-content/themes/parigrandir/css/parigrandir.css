@@ -1,12 +1,5 @@
 body {
 	background-image: url(../img/bg.jpg);
-
-		/* Hidden by default and enabled by javascript to avoid FOUC (Flash Of Unstyled Content) */
-	/*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	filter: alpha(opacity=0);
-	-moz-opacity: 0;
-	-khtml-opacity: 0;
-	opacity: 0;*/
 }
 
 #wrapper { 
@@ -162,7 +155,7 @@ ul.submenu a {
 	-o-transform: rotate(-5deg);
 }
 
-.menu-item-0 > span a:hover { 
+.menu-item-0 > span a:hover, .menu-item-0 > span a.selected { 
 	background-position: -100px -58px;
 	color: #FFF;
 	cursor: pointer;
@@ -673,13 +666,17 @@ footer .tabs .tab-3  {
 	height: 21px;
 }
 
-#page-accueil, #page-presentation {
+#page-accueil, 
+#page-presentation,
+#page-atelierbebeparents {
 	position: relative;
 	width: 1030px;
 	font-size: 12px;
 }
 
-#page-accueil .top, #page-presentation .top {
+#page-accueil .top, 
+#page-presentation .top,
+#page-atelierbebeparents .top {
 	width: 100%;
 	height: 70px;
 	position: relative;
@@ -695,15 +692,24 @@ footer .tabs .tab-3  {
 	background: url(../img/header_orange_red.png) no-repeat;
 }
 
-#page-accueil .content, #page-presentation .content {
+#page-atelierbebeparents .top {
+	background: url(../img/header_yellow.png) no-repeat;
+}
+
+#page-accueil .content, 
+#page-presentation .content,
+#page-atelierbebeparents .content {
 	position: relative;
 	float: left;
 	width: 100%;
 	height: auto;
+	min-height: 517px;
 	background: url(../img/bg_without_footer2.png) no-repeat;
 }
 
-#page-accueil .content-area, #page-presentation .content-area {
+#page-accueil .content-area, 
+#page-presentation .content-area,
+#page-atelierbebeparents .content-area {
 	position: relative;
 	float: left;
 	width: 100%;
@@ -808,7 +814,9 @@ footer .tabs .tab-3  {
 	background: url(../img/spritesheet.png) no-repeat -1703px -499px;
 }
 
-#page-accueil .footer, #page-presentation .footer {
+#page-accueil .footer, 
+#page-presentation .footer,
+#page-atelierbebeparents .footer {
 	position: relative;
 	float: left;
 	width: 100%;
@@ -821,6 +829,10 @@ footer .tabs .tab-3  {
 
 #page-presentation .footer {
 	background: url(../img/bg_footer_orange_red.png) no-repeat;
+}
+
+#page-atelierbebeparents .footer {
+	background: url(../img/bg_footer_yellow.png) no-repeat;
 }
 
 #page-presentation .left-col {
@@ -845,6 +857,34 @@ footer .tabs .tab-3  {
 	width: 600px;
 }
 
+#page-presentation .quisommesnous h2 {
+	width: 420px;
+	height: 45px;
+	text-indent: -9999em;
+}
+
+#page-presentation .quisommesnous.fr h2 {
+	background: url(../img/spritesheet.png) no-repeat -800px -500px;
+}
+
+#page-presentation .quisommesnous.en h2 {
+	background: url(../img/spritesheet.png) no-repeat -800px -550px;
+}
+
+#page-presentation .lecentre h2 {
+	width: 200px;
+	height: 55px;
+	text-indent: -9999em;
+}
+
+#page-presentation .lecentre.fr h2 {
+	background: url(../img/spritesheet.png) no-repeat -800px -600px;
+}
+
+#page-presentation .lecentre.en h2 {
+	background: url(../img/spritesheet.png) no-repeat -1000px -600px;
+}
+
 #page-presentation .lecentre {
 	position: relative;
 	float: left;
@@ -853,6 +893,10 @@ footer .tabs .tab-3  {
 	margin-left: 18px;
 	padding: 25px 25px 0 25px;
 	background: url(../img/presentation_middlebg.jpg) no-repeat;
+}
+
+#page-presentation .lecentre img {
+	margin-top: -80px !important;
 }
 
 #page-presentation .lequipe	 {
@@ -865,24 +909,120 @@ footer .tabs .tab-3  {
 	background: url(../img/presentation_orange.jpg) no-repeat;
 }
 
-#page-presentation .lecentre img {
-	margin-top: -50px !important;
+#page-presentation .lequipe h2 {
+	width: 185px;
+	height: 35px;
+	text-indent: -9999em;
+}
+
+#page-presentation .lequipe.fr h2 {
+	background: url(../img/spritesheet.png) no-repeat -1300px -500px;
+}
+
+#page-presentation .lequipe.en h2 {
+	background: url(../img/spritesheet.png) no-repeat -1300px -550px;
 }
 
 #page-presentation .sponsors {
 	position: relative;
-	width: 270px;
+	width: 260px;
 	height: 600px;
 	top: 55px;
-	padding: 15px 30px;
+	padding: 5px 30px;
 	background: url(../img/presentation_rhs.jpg) no-repeat;
 }
 
-#page-presentation .sponsors .images {
+#page-presentation .sponsors {
 	text-align: center;
-	padding-top: 40px;
 }
 
+#page-presentation .sponsors .images {
+	padding-top: 10px;
+}
+
+#page-presentation .sponsors h1, 
+#page-presentation .sponsors h2,
+#page-presentation .sponsors h3,
+#page-presentation .sponsors h4,
+#page-presentation .sponsors h5,
+#page-presentation .sponsors h6 {
+	font-family : Comic Sans MS, Comic Sans MS5, cursive, Arial;
+	color: #FF0000;
+	font-size: 200%;
+	line-height: 75%;
+}
+
+#page-atelierbebeparents .left-col {
+	position: relative;
+	width: 45%;
+	height: auto;
+	float: left;
+	padding-left: 40px;
+	top: 60px;
+} 
+
+#page-atelierbebeparents .left-col h2 {
+	font-family : Comic Sans MS, Comic Sans MS5, cursive, Arial;
+	color: #f2a823;
+	line-height: 26px;
+	text-transform: uppercase;
+}
+
+#page-atelierbebeparents .left-col img {
+	margin: -4px 0;
+}
+
+#page-atelierbebeparents .right-col {
+	position: relative;
+	width: 49%;
+	height: auto;
+	float: left;
+}
+
+#page-atelierbebeparents .right-col .illustration {
+	position: relative;
+	width: 420px;
+	height: 220px;
+	background: url(../img/pic_32_le_massage_bebe.png) no-repeat;
+}
+
+#page-atelierbebeparents .right-col .table {
+	position: relative;
+	width: 420px;
+	height: 295px;
+	background: url(../img/planning_tb_yellow.png) no-repeat;
+	margin-left: 30px;
+	text-align: right;
+}
+
+#page-atelierbebeparents .right-col .table h3 {
+	color: #F2A822;
+}
+
+#page-atelierbebeparents .right-col .schedule {
+	float: left;
+	margin-top: 95px;
+	margin-left: 70px;
+}
+
+#page-atelierbebeparents .right-col .costs {
+	float: left;
+	margin-top: 95px;
+	margin-left: 50px;
+}
+
+#page-atelierbebeparents .headerinfo {
+	position: absolute;
+	text-align: right;
+	margin-left: 780px;
+	margin-top: -52px;
+	width: 200px;
+	z-index: 2;
+	font-family: Comic Sans MS, Comic Sans MS5, cursive, Arial;
+	font-weight: bold;
+	color: #FFF;
+	font-size: 15px;
+}
 
 /* =WordPress Core
 -------------------------------------------------------------- */

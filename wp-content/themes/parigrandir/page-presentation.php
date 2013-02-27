@@ -12,7 +12,7 @@
 
 <?php pg_get_header() ?>
 
-<?php pg_get_nav() ?>
+<?php pg_get_nav(1) ?>
 
 <?php
 
