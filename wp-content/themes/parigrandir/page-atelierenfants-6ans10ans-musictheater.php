@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Atelier Enfants 3 ans - 6 ans > Musique et Théatre
- * Description: Template for /atelier-enfants/3-ans-6-ans/musique-et-theatre/
+ * Template Name: Atelier Enfants 6 ans - 10 ans > Musique et Théatre
+ * Description: Template for /atelier-enfants/6-ans-10-ans/musique-et-theatre/
  *
  * @package WordPress
  * @subpackage Pari Grandir
@@ -58,7 +58,7 @@ if (have_posts()):
 				</section>
 
 				<section class="right-col">
-					<div class="illustration illustration-8"></div>
+					<div class="illustration illustration-12"></div>
 					<div class="table fr">
 						<span class="schedule"><?php echo $fr['schedule'] ?></span>
 						<span class="costs"><?php echo $fr['costs'] ?></span>

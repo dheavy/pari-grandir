@@ -32,12 +32,12 @@ switch ($template_file)
 	case 'page-atelierenfants-20mois3ans-prepaabc.php':
 	case 'page-atelierenfants-3ans6ans-anglais.php':
 	case 'page-atelierenfants-3ans6ans-artsplastiques.php':
-	case 'page-atelierenfants-3ans6ans-musiqueettheatre.php':
+	case 'page-atelierenfants-3ans6ans-musictheater.php':
 	case 'page-atelierenfants-3ans6ans-theatre.php':
 	case 'page-atelierenfants-3ans6ans-yogakids.php':
 	case 'page-atelierenfants-6ans10ans-anglais.php':
 	case 'page-atelierenfants-6ans10ans-artsplastiques.php':
-	case 'page-atelierenfants-6ans10ans-musiqueettheatre.php':
+	case 'page-atelierenfants-6ans10ans-musictheater.php':
 	case 'page-atelierenfants-6ans10ans-theatre.php':
 	case 'page-atelierenfants-6ans10ans-yogakids.php':
 		require_once('backend/functions.page-atelierenfants.php');
