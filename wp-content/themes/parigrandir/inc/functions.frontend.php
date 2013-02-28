@@ -89,8 +89,8 @@ function pg_get_nav($p)
 			if (pg_has_children($page_id)) {
 				if ($p == $i) {
 					echo '<li class="menu menu-item menu-item-' . $i . '">' . "\n";
-					echo '	<span class="fr"><a class="selected has-flyout-menu" href="#" rel="nofollow" data-submenu="submenu-item-' . $i . '">' . $page_title['fr'] . '</a></span>' . "\n";
-					echo '	<span class="en"><a class="selected has-flyout-menu" href="#" rel="nofollow" data-submenu="submenu-item-' . $i . '">' . $page_title['en'] . '</a></span>' . "\n";
+					echo '	<span class="fr"><a class="selected-plus has-flyout-menu" href="#" rel="nofollow" data-submenu="submenu-item-' . $i . '">' . $page_title['fr'] . '</a></span>' . "\n";
+					echo '	<span class="en"><a class="selected-plus has-flyout-menu" href="#" rel="nofollow" data-submenu="submenu-item-' . $i . '">' . $page_title['en'] . '</a></span>' . "\n";
 					echo '	<ul class="submenu submenu-item-' . $i .'">' . "\n";
 				} else {
 					echo '<li class="menu menu-item menu-item-' . $i . '">' . "\n";
@@ -126,7 +126,7 @@ function pg_get_nav($p)
 			} else {
 				if ($p == $i) {
 					echo '<li class="menu menu-item menu-item-' . $i . '">' . "\n";
-					echo '<span class="fr"><a class="selected" href="' . $permalink . '" alt="Aller &agrave; la rubrique ' . $page_title['fr'] . '" title="Aller &agrave; la rubrique ' . $page_title['fr'] . '">' . $page_title['fr'] . '</a></span>' . "\n";
+					echo '<span class="fr"><a class="selected-plus" href="' . $permalink . '" alt="Aller &agrave; la rubrique ' . $page_title['fr'] . '" title="Aller &agrave; la rubrique ' . $page_title['fr'] . '">' . $page_title['fr'] . '</a></span>' . "\n";
 				} else {
 					echo '<li class="menu menu-item menu-item-' . $i . '">' . "\n";
 					echo '<span class="fr"><a href="' . $permalink . '" alt="Aller &agrave; la rubrique ' . $page_title['fr'] . '" title="Aller &agrave; la rubrique ' . $page_title['fr'] . '">' . $page_title['fr'] . '</a></span>' . "\n";
@@ -136,13 +136,13 @@ function pg_get_nav($p)
 				// count character and reduce font size and line height locally if needed.
 				if (strlen($page_title['en']) <= 24) {
 					if ($p == $i) {
-						echo '<span class="en"><a class="selected" href="' . $permalink . '" alt="Go to ' . $page_title['en'][0] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
+						echo '<span class="en"><a class="selected-plus" href="' . $permalink . '" alt="Go to ' . $page_title['en'][0] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
 					} else {
 						echo '<span class="en"><a href="' . $permalink . '" alt="Go to ' . $page_title['en'][0] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
 					}
 				} else {
 					if ($p == $i) {
-						echo '<span class="en"><a class="selected smaller" href="' . $permalink . '" alt="Go to ' . $page_title['en'] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
+						echo '<span class="en"><a class="selected-plus smaller" href="' . $permalink . '" alt="Go to ' . $page_title['en'] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
 					} else {
 						echo '<span class="en"><a class="smaller" href="' . $permalink . '" alt="Go to ' . $page_title['en'] . '" title="Go to ' . $page_title['en'] . '">' . $page_title['en'] . '</a></span>' . "\n";
 					}

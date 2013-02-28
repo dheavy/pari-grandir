@@ -91,5 +91,5 @@ function pg_save_accueil_postdata()
 	add_post_meta($post->ID, 'en_title', $en_title, true) or update_post_meta($post->ID, 'en_title', $en_title);
 	add_post_meta($post->ID, 'en_main', $en_main, true) or update_post_meta($post->ID, 'en_main', $en_main);
 	add_post_meta($post->ID, 'fr_costs', $fr_costs, true) or update_post_meta($post->ID, 'fr_costs', $fr_costs);
-	add_post_meta($post->ID, 'en_costs', $en_costs, true) or update_post_meta($post->ID, 'en_costs', $fr_costs);
+	add_post_meta($post->ID, 'en_costs', $en_costs, true) or update_post_meta($post->ID, 'en_costs', $en_costs);
 }
