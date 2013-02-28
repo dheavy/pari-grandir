@@ -52,6 +52,13 @@ header h1 a:hover {
 	overflow: hidden;
 	left: 470px;
 	top: 50px;
+
+	/* hidden by default */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+	opacity: 0;
 }
 
 .lang-switch a {
@@ -500,7 +507,7 @@ footer {
 	top: 20px;
 }
 
-footer .content {
+footer .footer-content {
 	position: relative;
 	width: 1010px;
 	left: 50%;
@@ -670,7 +677,8 @@ footer .tabs .tab-3  {
 #page-presentation,
 #page-atelierbebeparents,
 #page-atelierenfants,
-#page-atelieradultes {
+#page-atelieradultes,
+#page-planningettarifs {
 	position: relative;
 	width: 1030px;
 	font-size: 12px;
@@ -702,6 +710,10 @@ footer .tabs .tab-3  {
 
 #page-atelieradultes .top {
 	background: url(../img/header_light_pink.png) no-repeat;
+}
+
+#page-planningettarifs .top {
+	background: url(../img/header_green.png) no-repeat;
 }
 
 .content {
@@ -845,6 +857,10 @@ footer .tabs .tab-3  {
 	background: url(../img/bg_footer_light_pink.png) no-repeat;
 }
 
+#page-planningettarifs .footer {
+	background: url(../img/bg_footer_green.png) no-repeat;
+}
+
 #page-presentation .left-col {
 	width: 665px;
 	padding-left: 5px;
@@ -960,6 +976,10 @@ footer .tabs .tab-3  {
 	color: #FF0000;
 	font-size: 200%;
 	line-height: 75%;
+}
+
+.one-col {
+	margin: 0 50px;
 }
 
 #page-atelierbebeparents .left-col,
@@ -1148,9 +1168,7 @@ footer .tabs .tab-3  {
 	margin-left: 50px;
 }
 
-#page-atelierbebeparents .headerinfo,
-#page-atelierenfants .headerinfo,
-#page-atelieradultes .headerinfo {
+.headerinfo {
 	position: absolute;
 	text-align: right;
 	margin-left: 780px;
@@ -1162,7 +1180,7 @@ footer .tabs .tab-3  {
 	font-size: 15px;
 }
 
-#page-atelierenfants .headerlinks {
+.headerlinks {
 	position: absolute;
 	text-align: left;
 	margin-left: 50px;
@@ -1174,8 +1192,8 @@ footer .tabs .tab-3  {
 	font-size: 15px;
 }
 
-#page-atelierenfants .headerlinks ul, 
-#page-atelierenfants .headerlinks ul li {
+.headerlinks ul, 
+.headerlinks ul li {
 	display: inline;
 	margin: 0 20px 0 0;
 	padding: 30px 0 0 0;
@@ -1187,19 +1205,37 @@ footer .tabs .tab-3  {
 	color: #96e4f1;
 }
 
-#page-atelierenfants .headerlinks a:hover {
+#page-planningettarifs .headerlinks a {
+	text-decoration: none;
+	color: #6ae7a5;
+}
+
+.headerlinks a:hover {
 	text-decoration: none;
 	color: #FFF;
 }
 
-#page-atelierenfants .headerlinks a.selected {
-	text-decoration: underline;
+.headerlinks a.selected {
+	text-decoration: underline !important;
+	color: #FFF !important;
+}
+ 
+.headerinfo {
 	color: #FFF;
 }
 
-#page-atelierbebeparents .headerinfo,
-#page-atelierenfants .headerinfo {
-	color: #FFF;
+#page-planningettarifs .one-col h1.fr {
+	width: 420px;
+	height: 50px;
+	text-indent: -9999em;
+	background: url(../img/spritesheet.png) no-repeat -300px -700px;
+}
+
+#page-planningettarifs .one-col h1.en {
+	width: 420px;
+	height: 50px;
+	text-indent: -9999em;
+	background: url(../img/spritesheet.png) no-repeat -300px -750px;
 }
 
 /* =WordPress Core

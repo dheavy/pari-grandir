@@ -1,5 +1,5 @@
 		<footer>
-			<div class="content">
+			<div class="footer-content">
 				<section class="address">
 					<span class="left">
 						<h4>PARI-GRANDIR</h4>

@@ -25,12 +25,8 @@ function pg_add_meta_boxes()
 
 	add_meta_box('en_title', __('Page title in English'), 'create_en_title_field', 'page');
 	add_meta_box('en_main', __('Main text - English text'), 'create_en_main_field', 'page');
-	add_meta_box('fr_headerlinks', __('Header information ("3 mois - 2 ans") - French text'), 'create_fr_headerlinks_field', 'page');
-	add_meta_box('en_headerlinks', __('Header information ("3 mois - 2 ans") - English text'), 'create_en_headerlinks_field', 'page');
-	add_meta_box('fr_schedule', __('Horaires / Schedule - French text'), 'create_fr_schedule_field', 'page');
-	add_meta_box('en_schedule', __('Horaires / Schedule - English text'), 'create_en_schedule_field', 'page');
-	add_meta_box('fr_costs', __('Tarifs / Costs - French text'), 'create_fr_costs_field', 'page');
-	add_meta_box('en_costs', __('Tarifs / Costs - English text'), 'create_en_costs_field', 'page');
+	add_meta_box('fr_headerlinks', __('Header links - French text'), 'create_fr_headerlinks_field', 'page');
+	add_meta_box('en_headerlinks', __('Header links - English text'), 'create_en_headerlinks_field', 'page');
 
 	function create_en_title_field($post) 
 	{
@@ -66,34 +62,6 @@ function pg_add_meta_boxes()
 		$en_headerlinks = $custom['en_headerlinks'][0];
 		wp_editor($en_headerlinks, 'admin-en-headerlinks', array('media_buttons' => false));
 	}
-
-	function create_fr_schedule_field($post) 
-	{
-		$custom = get_post_custom($post->ID);
-		$fr_schedule = $custom['fr_schedule'][0];
-		wp_editor($fr_schedule, 'admin-fr-schedule', array('media_buttons' => false));
-	}
-
-	function create_en_schedule_field($post) 
-	{
-		$custom = get_post_custom($post->ID);
-		$en_schedule = $custom['en_schedule'][0];
-		wp_editor($en_schedule, 'admin-en-schedule', array('media_buttons' => false));
-	}
-
-	function create_fr_costs_field($post) 
-	{
-		$custom = get_post_custom($post->ID);
-		$fr_costs = $custom['fr_costs'][0];
-		wp_editor($fr_costs, 'admin-fr-costs', array('media_buttons' => false));
-	}
-
-	function create_en_costs_field($post) 
-	{
-		$custom = get_post_custom($post->ID);
-		$en_costs = $custom['en_costs'][0];
-		wp_editor($en_costs, 'admin-en-costs', array('media_buttons' => false));
-	}
 }
 
 /**
@@ -122,18 +90,10 @@ function pg_save_accueil_postdata()
 	$en_main = $_POST['admin-en-main'];
 	$fr_headerlinks = $_POST['admin-fr-headerlinks'];
 	$en_headerlinks = $_POST['admin-en-headerlinks'];
-	$fr_schedule = $_POST['admin-fr-schedule'];
-	$en_schedule = $_POST['admin-en-schedule'];
-	$fr_costs = $_POST['admin-fr-costs'];
-	$en_costs = $_POST['admin-en-costs'];
 
 	// Save
 	add_post_meta($post->ID, 'en_title', $en_title, true) or update_post_meta($post->ID, 'en_title', $en_title);
 	add_post_meta($post->ID, 'en_main', $en_main, true) or update_post_meta($post->ID, 'en_main', $en_main);
 	add_post_meta($post->ID, 'fr_headerlinks', $fr_headerlinks, true) or update_post_meta($post->ID, 'fr_headerlinks', $fr_headerlinks);
 	add_post_meta($post->ID, 'en_headerlinks', $en_headerlinks, true) or update_post_meta($post->ID, 'en_headerlinks', $en_headerlinks);
-	add_post_meta($post->ID, 'fr_schedule', $fr_schedule, true) or update_post_meta($post->ID, 'fr_schedule', $fr_schedule);
-	add_post_meta($post->ID, 'en_schedule', $en_schedule, true) or update_post_meta($post->ID, 'en_schedule', $en_schedule);
-	add_post_meta($post->ID, 'fr_costs', $fr_costs, true) or update_post_meta($post->ID, 'fr_costs', $fr_costs);
-	add_post_meta($post->ID, 'en_costs', $en_costs, true) or update_post_meta($post->ID, 'en_costs', $fr_costs);
 }

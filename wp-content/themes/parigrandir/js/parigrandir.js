@@ -5,9 +5,18 @@ $(document).ready(function() {
   	Language switch mechanism
   */
 
-  var $flyOutParents, $flyoutContainer, $imagesContainer, $imagesSponsors, $imagesWelcome, $langSwitch, $slideshowContainer, $sponsors, index, setLang, showImage, tick, timer;
+  var $flyOutParents, $flyoutContainer, $imagesContainer, $imagesSponsors, $imagesWelcome, $langSwitch, $slideshowContainer, $sponsors, index, setLang, showImage, showLangSwitch, tick, timer;
   $langSwitch = $('.lang-switch');
-  console.log($langSwitch);
+  /*
+  	Show language switcher after 4 seconds
+  */
+
+  showLangSwitch = function() {
+    return $('#lang-switchers').animate({
+      opacity: 1
+    }, 500);
+  };
+  setTimeout(showLangSwitch, 1000);
   /*
   	Display proper language
   */
