@@ -701,7 +701,8 @@ footer .tabs .tab-3  {
 #page-planningettarifs,
 #page-sortiedecole,
 #page-happymercredi,
-#page-vacancesscolaires {
+#page-vacancesscolaires,
+#page-anniversaire {
 	position: relative;
 	width: 1030px;
 	font-size: 12px;
@@ -749,6 +750,10 @@ footer .tabs .tab-3  {
 
 #page-vacancesscolaires .top {
 	background: url(../img/header_dark_red.png) no-repeat;
+}
+
+#page-anniversaire .top {
+	background: url(../img/header_pink.png) no-repeat;
 }
 
 .content {
@@ -908,6 +913,10 @@ footer .tabs .tab-3  {
 	background: url(../img/bg_footer_red.png) no-repeat;
 }
 
+#page-anniversaire .footer {
+	background: url(../img/bg_footer_pink.png) no-repeat;
+}
+
 #page-presentation .left-col {
 	width: 665px;
 	padding-left: 5px;
@@ -1034,7 +1043,8 @@ footer .tabs .tab-3  {
 #page-atelieradultes .left-col,
 #page-sortiedecole .left-col,
 #page-happymercredi .left-col,
-#page-vacancesscolaires .left-col {
+#page-vacancesscolaires .left-col,
+#page-anniversaire .left-col {
 	position: relative;
 	width: 45%;
 	height: auto;
@@ -1051,7 +1061,9 @@ footer .tabs .tab-3  {
 #page-happymercredi .left-col h2,
 #page-happymercredi .right-col a
 #page-vacancesscolaires .left-col h2,
-#page-vacancesscolaires .right-col a {
+#page-vacancesscolaires .right-col a,
+#page-anniversaire .left-col h2,
+#page-anniversaire .right-col a  {
 	font-family : Comic Sans MS, Comic Sans MS5, cursive, Arial;
 	line-height: 26px;
 	text-transform: uppercase;
@@ -1089,6 +1101,12 @@ footer .tabs .tab-3  {
 	margin-bottom: -15px;
 }
 
+#page-anniversaire .left-col h2,
+#page-anniversaire .right-col a {
+	color: #f5008f;
+	margin-bottom: -15px;
+}
+
 #page-atelierbebeparents .left-col img,
 #page-atelieradultes .left-col img {
 	margin: -4px 0;
@@ -1100,7 +1118,8 @@ footer .tabs .tab-3  {
 #page-planningettarifs .right-col,
 #page-sortiedecole .right-col,
 #page-happymercredi .right-col,
-#page-vacancesscolaires .right-col {
+#page-vacancesscolaires .right-col,
+#page-anniversaire .right-col {
 	position: relative;
 	width: 49%;
 	height: auto;
@@ -1234,7 +1253,8 @@ footer .tabs .tab-3  {
 
 #page-sortiedecole .right-col div,
 #page-happymercredi .right-col div,
-#page-vacancesscolaires .right-col div {
+#page-vacancesscolaires .right-col div,
+#page-anniversaire .right-col div {
 	width: 500px;
 	text-align: right;
 	margin-left: -100px;
