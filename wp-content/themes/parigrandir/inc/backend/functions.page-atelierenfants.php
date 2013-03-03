@@ -54,63 +54,63 @@ function pg_add_meta_boxes()
 	{
 		$custom = get_post_custom($post->ID);
 		$en_main = $custom['en_main'][0];
-		wp_editor($en_main, 'admin-en-main', array('media_buttons' => false));
+		wp_editor($en_main, 'admin-en-main', array('media_buttons' => true));
 	}
 
 	function create_fr_headerlinks_field($post) 
 	{
 		$custom = get_post_custom($post->ID);
 		$fr_headerlinks = $custom['fr_headerlinks'][0];
-		wp_editor($fr_headerlinks, 'admin-fr-headerlinks', array('media_buttons' => false));
+		wp_editor($fr_headerlinks, 'admin-fr-headerlinks', array('media_buttons' => true));
 	}
 
 	function create_en_headerlinks_field($post) 
 	{
 		$custom = get_post_custom($post->ID);
 		$en_headerlinks = $custom['en_headerlinks'][0];
-		wp_editor($en_headerlinks, 'admin-en-headerlinks', array('media_buttons' => false));
+		wp_editor($en_headerlinks, 'admin-en-headerlinks', array('media_buttons' => true));
 	}
 
 	function create_fr_headerinfo_field($post) 
 	{
 		$custom = get_post_custom($post->ID);
 		$fr_headerinfo = $custom['fr_headerinfo'][0];
-		wp_editor($fr_headerinfo, 'admin-fr-headerinfo', array('media_buttons' => false));
+		wp_editor($fr_headerinfo, 'admin-fr-headerinfo', array('media_buttons' => true));
 	}
 
 	function create_en_headerinfo_field($post) 
 	{
 		$custom = get_post_custom($post->ID);
 		$en_headerinfo = $custom['en_headerinfo'][0];
-		wp_editor($en_headerinfo, 'admin-en-headerinfo', array('media_buttons' => false));
+		wp_editor($en_headerinfo, 'admin-en-headerinfo', array('media_buttons' => true));
 	}
 
 	function create_fr_schedule_field($post) 
 	{
 		$custom = get_post_custom($post->ID);
 		$fr_schedule = $custom['fr_schedule'][0];
-		wp_editor($fr_schedule, 'admin-fr-schedule', array('media_buttons' => false));
+		wp_editor($fr_schedule, 'admin-fr-schedule', array('media_buttons' => true));
 	}
 
 	function create_en_schedule_field($post) 
 	{
 		$custom = get_post_custom($post->ID);
 		$en_schedule = $custom['en_schedule'][0];
-		wp_editor($en_schedule, 'admin-en-schedule', array('media_buttons' => false));
+		wp_editor($en_schedule, 'admin-en-schedule', array('media_buttons' => true));
 	}
 
 	function create_fr_costs_field($post) 
 	{
 		$custom = get_post_custom($post->ID);
 		$fr_costs = $custom['fr_costs'][0];
-		wp_editor($fr_costs, 'admin-fr-costs', array('media_buttons' => false));
+		wp_editor($fr_costs, 'admin-fr-costs', array('media_buttons' => true));
 	}
 
 	function create_en_costs_field($post) 
 	{
 		$custom = get_post_custom($post->ID);
 		$en_costs = $custom['en_costs'][0];
-		wp_editor($en_costs, 'admin-en-costs', array('media_buttons' => false));
+		wp_editor($en_costs, 'admin-en-costs', array('media_buttons' => true));
 	}
 }
 

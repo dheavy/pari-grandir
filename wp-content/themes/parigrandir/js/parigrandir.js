@@ -52,7 +52,8 @@ $(document).ready(function() {
     };
     return $flyoutMenu.mouseleave(function(e) {
       $flyoutMenu.hide();
-      return $(elm).removeClass('selected');
+      $flyOutParents.removeClass('selected');
+      return $('.submenu').css('display', 'none');
     });
   });
   /*

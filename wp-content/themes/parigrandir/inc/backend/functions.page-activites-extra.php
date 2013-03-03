@@ -42,21 +42,21 @@ function pg_add_meta_boxes()
 	{
 		$custom = get_post_custom($post->ID);
 		$en_main = $custom['en_main'][0];
-		wp_editor($en_main, 'admin-en-main', array('media_buttons' => false));
+		wp_editor($en_main, 'admin-en-main', array('media_buttons' => true));
 	}
 
 	function create_fr_costs_field($post) 
 	{
 		$custom = get_post_custom($post->ID);
 		$fr_costs = $custom['fr_costs'][0];
-		wp_editor($fr_costs, 'admin-fr-costs', array('media_buttons' => false));
+		wp_editor($fr_costs, 'admin-fr-costs', array('media_buttons' => true));
 	}
 
 	function create_en_costs_field($post) 
 	{
 		$custom = get_post_custom($post->ID);
 		$en_costs = $custom['en_costs'][0];
-		wp_editor($en_costs, 'admin-en-costs', array('media_buttons' => false));
+		wp_editor($en_costs, 'admin-en-costs', array('media_buttons' => true));
 	}
 }
 

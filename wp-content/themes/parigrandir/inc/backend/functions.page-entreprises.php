@@ -23,8 +23,8 @@ function pg_add_meta_boxes()
 
 	add_meta_box('en_title', __('Page title in English'), 'create_en_title_field', 'page');
 	add_meta_box('en_main', __('Main text - English text'), 'create_en_main_field', 'page');
-	add_meta_box('fr_headerinfo', __('Header information ("3 mois - 2 ans") - French text'), 'create_fr_headerinfo_field', 'page');
-	add_meta_box('en_headerinfo', __('Header information ("3 mois - 2 ans") - English text'), 'create_en_headerinfo_field', 'page');
+	add_meta_box('fr_headerinfo', __('Header information - French text'), 'create_fr_headerinfo_field', 'page');
+	add_meta_box('en_headerinfo', __('Header information - English text'), 'create_en_headerinfo_field', 'page');
 	add_meta_box('fr_familyday', __('Family Day - French text'), 'create_fr_familyday_field', 'page');
 	add_meta_box('en_familyday', __('Family Day - English text'), 'create_en_familyday_field', 'page');
 

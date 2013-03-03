@@ -19,6 +19,8 @@ function pg_add_meta_boxes()
 
 	add_meta_box('en_title', __('Page title in English'), 'create_en_title_field', 'page');
 	add_meta_box('en_main', __('Main text - English text'), 'create_en_main_field', 'page');
+	add_meta_box('fr_headerinfo', __('Header information - French text'), 'create_fr_headerinfo_field', 'page');
+	add_meta_box('en_headerinfo', __('Header information - English text'), 'create_en_headerinfo_field', 'page');
 
 	function create_en_title_field($post) 
 	{
@@ -39,6 +41,20 @@ function pg_add_meta_boxes()
 		$custom = get_post_custom($post->ID);
 		$en_main = $custom['en_main'][0];
 		wp_editor($en_main, 'admin-en-main', array('media_buttons' => true));
+	}
+
+	function create_fr_headerinfo_field($post) 
+	{
+		$custom = get_post_custom($post->ID);
+		$fr_headerinfo = $custom['fr_headerinfo'][0];
+		wp_editor($fr_headerinfo, 'admin-fr-headerinfo', array('media_buttons' => false));
+	}
+
+	function create_en_headerinfo_field($post) 
+	{
+		$custom = get_post_custom($post->ID);
+		$en_headerinfo = $custom['en_headerinfo'][0];
+		wp_editor($en_headerinfo, 'admin-en-headerinfo', array('media_buttons' => false));
 	}
 }
 
@@ -66,8 +82,12 @@ function pg_save_accueil_postdata()
 	// Tags will be stripped in the rich text box if wpautop() function isn't used :(
 	$en_title = $_POST['admin-en-title'];
 	$en_main = $_POST['admin-en-main'];
+	$fr_headerinfo = $_POST['admin-fr-headerinfo'];
+	$en_headerinfo = $_POST['admin-en-headerinfo'];
 
 	// Save
 	add_post_meta($post->ID, 'en_title', $en_title, true) or update_post_meta($post->ID, 'en_title', $en_title);
 	add_post_meta($post->ID, 'en_main', $en_main, true) or update_post_meta($post->ID, 'en_main', $en_main);
+	add_post_meta($post->ID, 'fr_headerinfo', $fr_headerinfo, true) or update_post_meta($post->ID, 'fr_headerinfo', $fr_headerinfo);
+	add_post_meta($post->ID, 'en_headerinfo', $en_headerinfo, true) or update_post_meta($post->ID, 'en_headerinfo', $en_headerinfo);
 }

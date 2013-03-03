@@ -36,7 +36,7 @@ if (have_posts()):
 		<div class="top below-flyout-container"></div>
 		<div class="content">
 			<div class="content-area">
-				<section class="left-col">
+				<section class="left-col very-long">
 					<div class="main fr">
 						<?php echo $fr['main'] ?>
 					</div>

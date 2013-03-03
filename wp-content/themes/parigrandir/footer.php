@@ -14,8 +14,10 @@
 					<?php pg_get_extra_links() ?>
 
 				</section>
-				
-				<?php pg_get_footer_tabs() ?>
+				<?php 
+					$slug = basename(get_permalink()); 
+					pg_get_footer_tabs($slug);
+				?>
 
 			</div>
 		</footer>

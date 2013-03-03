@@ -205,7 +205,7 @@ function pg_get_extra_links()
 EOT;
 }
 
-function pg_get_footer_tabs() 
+function pg_get_footer_tabs($p) 
 {
 	global $all_pages;
 	$i = 0;
@@ -228,10 +228,19 @@ function pg_get_footer_tabs()
 
 			// Some English translations may be too long to fit on the menu thumbnails:
 			// count character and reduce font size and top padding locally if needed.
+			$slug = basename($permalink);
 			if (strlen($page_title['en']) <= 15) {
-				echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . '">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en tab-' . $i . '">' . $page_title['en'] . '</a></li>' . "\n";
+				if ($p == $slug) {
+					echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . ' selected">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en tab-' . $i . ' selected">' . $page_title['en'] . '</a></li>' . "\n";
+				} else {
+					echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . '">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en tab-' . $i . '">' . $page_title['en'] . '</a></li>' . "\n";
+				}
 			} else {
-				echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . '">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en tab-' . $i . ' smaller">' . $page_title['en'] . '</a></li>' . "\n";
+				if ($p == $slug) {	
+					echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . ' selected">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en tab-' . $i . ' smaller selected">' . $page_title['en'] . '</a></li>' . "\n";
+				} else {
+					echo '		<li><a href="' . $permalink . '" alt="" title="" class="fr tab-' . $i . '">' . $page_title['fr'] . '</a><a href="' . $permalink . '" alt="" title="" class="en tab-' . $i . ' smaller">' . $page_title['en'] . '</a></li>' . "\n";
+				}
 			}
 
 			unset($all_pages[$key]);

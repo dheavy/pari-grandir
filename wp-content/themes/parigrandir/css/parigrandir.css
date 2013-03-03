@@ -620,7 +620,7 @@ footer .tabs ul, footer .tabs ul li {
 }
 
 footer .tabs a {
-	color: #FFF;
+	color: #0CAAD7;
 	text-decoration: none;
 	width: 108px;
 	height: 55px;
@@ -634,8 +634,10 @@ footer .tabs a.smaller {
 	padding-top: 15px;
 }
 
-footer .tabs a:hover {
+footer .tabs a:hover,
+footer .tabs a.selected {
 	background: url(../img/spritesheet.png) -449px -943px no-repeat;
+	color: #FFF;
 }
 
 footer .tabs .tab-0,
@@ -702,7 +704,8 @@ footer .tabs .tab-3  {
 #page-sortiedecole,
 #page-happymercredi,
 #page-vacancesscolaires,
-#page-anniversaire {
+#page-anniversaire,
+#page-extras {
 	position: relative;
 	width: 1030px;
 	font-size: 12px;
@@ -754,6 +757,10 @@ footer .tabs .tab-3  {
 
 #page-anniversaire .top {
 	background: url(../img/header_pink.png) no-repeat;
+}
+
+#page-extras .top {
+	background: url(../img/header_blue.png) no-repeat;
 }
 
 .content {
@@ -902,7 +909,7 @@ footer .tabs .tab-3  {
 }
 
 #page-sortiedecole .footer {
-	background: url(../img/bg_footer_green.png) no-repeat;
+	background: url(../img/bg_footer_purple.png) no-repeat;
 }
 
 #page-happymercredi .footer {
@@ -917,11 +924,29 @@ footer .tabs .tab-3  {
 	background: url(../img/bg_footer_pink.png) no-repeat;
 }
 
+#page-extras .footer {
+	background: url(../img/bg_footer_dark_blue.png) no-repeat;
+}
+
 #page-presentation .left-col {
 	width: 665px;
 	padding-left: 5px;
 	position: relative;
 	float: left;
+}
+
+#page-atelieradultes .left-col.long {
+	position: relative;
+	height: auto;
+	min-height: 660px;
+	margin-top: -50px;
+}
+
+#page-atelieradultes .left-col.very-long {
+	position: relative;
+	height: auto;
+	min-height: 950px;
+	margin-top: -50px;
 }
 
 #page-presentation .right-col {
@@ -1044,7 +1069,8 @@ footer .tabs .tab-3  {
 #page-sortiedecole .left-col,
 #page-happymercredi .left-col,
 #page-vacancesscolaires .left-col,
-#page-anniversaire .left-col {
+#page-anniversaire .left-col,
+#page-extras .left-col {
 	position: relative;
 	width: 45%;
 	height: auto;
@@ -1063,7 +1089,9 @@ footer .tabs .tab-3  {
 #page-vacancesscolaires .left-col h2,
 #page-vacancesscolaires .right-col a,
 #page-anniversaire .left-col h2,
-#page-anniversaire .right-col a  {
+#page-anniversaire .right-col a,
+#page-extras .left-col h2,
+#page-extras .right-col a  {
 	font-family : Comic Sans MS, Comic Sans MS5, cursive, Arial;
 	line-height: 26px;
 	text-transform: uppercase;
@@ -1119,7 +1147,8 @@ footer .tabs .tab-3  {
 #page-sortiedecole .right-col,
 #page-happymercredi .right-col,
 #page-vacancesscolaires .right-col,
-#page-anniversaire .right-col {
+#page-anniversaire .right-col,
+#page-extras .right-col {
 	position: relative;
 	width: 49%;
 	height: auto;
@@ -1128,6 +1157,7 @@ footer .tabs .tab-3  {
 
 #page-atelierbebeparents .right-col .illustration,
 #page-atelierenfants .right-col .illustration,
+#page-atelieradultes .right-col .illustration,
 #page-planningettarifs .right-col .illustration {
 	position: relative;
 	width: 420px;
@@ -1262,6 +1292,7 @@ footer .tabs .tab-3  {
 
 .schedule {
 	float: left;
+	width: 135px;
 	margin-top: 95px;
 	margin-left: 70px;
 }
@@ -1284,6 +1315,12 @@ footer .tabs .tab-3  {
 	font-weight: bold;
 	font-size: 15px;
 	text-transform: uppercase;
+}
+
+#page-sortiedecole .headerinfo,
+#page-extras .headerinfo {
+	width: 300px;
+	margin-left: 670px;
 }
 
 .headerlinks {
@@ -1342,6 +1379,14 @@ footer .tabs .tab-3  {
 	height: 50px;
 	text-indent: -9999em;
 	background: url(../img/spritesheet.png) no-repeat -300px -750px;
+}
+
+.familyday {
+	width: 290px;
+	margin-left: 110px;
+	margin-top: 40px;
+	background: url(../img/enterprises_family_day_border.png) no-repeat;
+	padding: 20px 40px;
 }
 
 /* =WordPress Core
