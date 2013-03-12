@@ -945,7 +945,7 @@ footer .tabs .tab-3  {
 #page-atelieradultes .left-col.very-long {
 	position: relative;
 	height: auto;
-	min-height: 950px;
+	min-height: 1010px;
 	margin-top: -50px;
 }
 
@@ -1318,6 +1318,7 @@ footer .tabs .tab-3  {
 }
 
 #page-sortiedecole .headerinfo,
+#page-anniversaire .headerinfo,
 #page-extras .headerinfo {
 	width: 300px;
 	margin-left: 670px;
