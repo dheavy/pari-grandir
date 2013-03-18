@@ -145,11 +145,12 @@ ul.submenu a {
 .menu-item-0 > span a {
 	position: relative;
 	font-weight: bold;
+	font-size: 14px !important;
 	width: 95px;
 	display: block;
 	text-align: center;
 	margin-top: 60px;
-	padding-top: 18px;
+	padding-top: 14px;
 	height: 80px;
 	background-image: url(../img/spritesheet.png);
 	background-repeat: no-repeat;
@@ -174,6 +175,7 @@ ul.submenu a {
 .menu-item-1 > span a {
 	position: relative;
 	font-weight: bold;
+	font-size: 12px !important;
 	width: 120px;
 	display: block;
 	text-align: center;
@@ -185,10 +187,10 @@ ul.submenu a {
 	background-position: 0px -158px;
 	overflow: hidden;
 	color: #ED3F24;
-	-webkit-transform: rotate(-1deg);
-	-moz-transform: rotate(-1deg);
-	-ms-transform: rotate(-1deg);
-	-o-transform: rotate(-1deg);
+	-webkit-transform: rotate(2deg);
+	-moz-transform: rotate(2deg);
+	-ms-transform: rotate(2deg);
+	-o-transform: rotate(2deg);
 }
 
 .menu-item-1 > span a:hover, 
@@ -203,23 +205,29 @@ ul.submenu a {
 .menu-item-2 > span a {
 	position: relative;
 	font-weight: bold;
-	width: 80px;
+	width: 95px;
 	display: block;
 	text-align: center;
 	margin-top: 50px;
-	padding-top: 18px;
+	padding-top: 16px;
 	padding-right: 20px;
-	padding-left: 20px;
+	padding-left: 9px;
 	height: 80px;
 	background-image: url(../img/spritesheet.png);
 	background-repeat: no-repeat;
 	background-position: 0px -248px;
 	overflow: hidden;
 	color: #D5941E;
-	-webkit-transform: rotate(0deg);
-	-moz-transform: rotate(0deg);
-	-ms-transform: rotate(0deg);
-	-o-transform: rotate(0deg);
+	-webkit-transform: rotate(-1deg);
+	-moz-transform: rotate(-1deg);
+	-ms-transform: rotate(-1deg);
+	-o-transform: rotate(-1deg);
+}
+
+.menu-item-2 > span.fr a { 
+	font-size: 12px !important;
+	line-height: 11px !important;
+	padding-top: 20px !important;
 }
 
 .menu-item-2 > span a:hover, 
@@ -232,13 +240,15 @@ ul.submenu a {
 }
 
 .menu-item-3 > span a {
+	font-size: 12px !important;
+	line-height: 12px !important;
 	position: relative;
 	font-weight: bold;
 	width: 74px;
 	display: block;
 	text-align: center;
 	margin-top: 40px;
-	padding-top: 27px;
+	padding-top: 28px;
 	padding-left: 5px;
 	padding-right: 15px;
 	height: 80px;
@@ -247,10 +257,10 @@ ul.submenu a {
 	background-position: 0px -337px;
 	overflow: hidden;
 	color: #2FA8DB;
-	-webkit-transform: rotate(0deg);
-	-moz-transform: rotate(0deg);
-	-ms-transform: rotate(0deg);
-	-o-transform: rotate(0deg);
+	-webkit-transform: rotate(2deg);
+	-moz-transform: rotate(2deg);
+	-ms-transform: rotate(2deg);
+	-o-transform: rotate(2deg);
 }
 
 .menu-item-3 > span a:hover, 
@@ -263,6 +273,8 @@ ul.submenu a {
 }
 
 .menu-item-4 > span a {
+	font-size: 12px !important;
+	line-height: 12px !important;
 	position: relative;
 	font-weight: bold;
 	width: 84px;
@@ -270,7 +282,7 @@ ul.submenu a {
 	text-align: center;
 	margin-top: 40px;
 	margin-left: -9px;
-	padding-top: 25px;
+	padding-top: 27px;
 	padding-left: 5px;
 	padding-right: 5px;
 	height: 80px;
@@ -279,10 +291,10 @@ ul.submenu a {
 	background-position: 0px -437px;
 	overflow: hidden;
 	color: #DE78CB;
-	-webkit-transform: rotate(0deg);
-	-moz-transform: rotate(0deg);
-	-ms-transform: rotate(0deg);
-	-o-transform: rotate(0deg);
+	-webkit-transform: rotate(-2deg);
+	-moz-transform: rotate(-2deg);
+	-ms-transform: rotate(-2deg);
+	-o-transform: rotate(-2deg);
 }
 
 .menu-item-4 > span a:hover, 
@@ -295,13 +307,15 @@ ul.submenu a {
 }
 
 .menu-item-5 > span a {
+	font-size: 12px !important;
+	line-height: 12px !important;
 	position: relative;
 	font-weight: bold;
 	width: 72px;
 	display: block;
 	text-align: center;
 	margin-top: 40px;
-	padding-top: 23px;
+	padding-top: 25px;
 	padding-left: 7px;
 	padding-right: 12px;
 	height: 80px;
@@ -310,10 +324,10 @@ ul.submenu a {
 	background-position: 0px -537px;
 	overflow: hidden;
 	color: #009245;
-	-webkit-transform: rotate(0deg);
-	-moz-transform: rotate(0deg);
-	-ms-transform: rotate(0deg);
-	-o-transform: rotate(0deg);
+	-webkit-transform: rotate(-1deg);
+	-moz-transform: rotate(-1deg);
+	-ms-transform: rotate(-1deg);
+	-o-transform: rotate(-1deg);
 }
 
 .menu-item-5 > span a:hover, 
@@ -340,10 +354,16 @@ ul.submenu a {
 	background-repeat: no-repeat;
 	background-position: 0px -637px;
 	color: #9D128E;
-	-webkit-transform: rotate(0deg);
-	-moz-transform: rotate(0deg);
-	-ms-transform: rotate(0deg);
-	-o-transform: rotate(0deg);
+	-webkit-transform: rotate(2deg);
+	-moz-transform: rotate(2deg);
+	-ms-transform: rotate(2deg);
+	-o-transform: rotate(2deg);
+}
+
+.menu-item-6 > span.fr a {
+	font-size: 12px !important;
+	line-height: 12px !important;
+	padding-top: 25px !important;
 }
 
 .menu-item-6 > span a:hover, 
@@ -362,7 +382,7 @@ ul.submenu a {
 	display: block;
 	text-align: center;
 	margin-top: 40px;
-	padding-top: 25px;
+	padding-top: 28px;
 	padding-left: 10px;
 	padding-right: 15px;
 	height: 80px;
@@ -377,6 +397,11 @@ ul.submenu a {
 	-o-transform: rotate(0deg);
 }
 
+.menu-item-7 > span.fr a {
+	font-size: 12px !important;
+	line-height: 12px !important;
+}
+
 .menu-item-7 > span a:hover, 
 .menu-item-7 > span a.selected,
 .menu-item-7 > span a.selected-plus { 
@@ -387,13 +412,15 @@ ul.submenu a {
 }
 
 .menu-item-8 > span a {
+	font-size: 12px !important;
+	line-height: 12px !important;
 	position: relative;
 	font-weight: bold;
 	width: 90px;
 	display: block;
 	text-align: center;
 	margin-top: 40px;
-	padding-top: 25px;
+	padding-top: 28px;
 	height: 80px;
 	background-image: url(../img/spritesheet.png);
 	background-repeat: no-repeat;
@@ -429,10 +456,16 @@ ul.submenu a {
 	background-position: 0px -938px;
 	overflow: hidden;
 	color: #E3288D;
-	-webkit-transform: rotate(0deg);
-	-moz-transform: rotate(0deg);
-	-ms-transform: rotate(0deg);
-	-o-transform: rotate(0deg);
+	-webkit-transform: rotate(2deg);
+	-moz-transform: rotate(2deg);
+	-ms-transform: rotate(2deg);
+	-o-transform: rotate(2deg);
+}
+
+.menu-item-9 > span.fr a {
+	font-size: 12px !important;
+	line-height: 12px !important;
+	padding-top: 31px;
 }
 
 .menu-item-9 > span a:hover, 
@@ -464,6 +497,12 @@ ul.submenu a {
 
 .submenu > li span a:hover {
 	color: #111;
+}
+
+.submenu-item-2 a, .submenu-item-3 a, .submenu-item-4 a, .submenu-item-5 a {
+	font-size: 11px !important;
+	line-height: 11px;
+	font-weight: bold;
 }
 
 .submenu-item-2 {
