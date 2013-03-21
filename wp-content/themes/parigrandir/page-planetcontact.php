@@ -32,7 +32,7 @@ if (have_posts()):
 
 	<section id="page-extras">
 		<div class="top below-flyout-container"></div>
-		<div class="content">
+		<div class="content contact-form">
 			<div class="content-area">
 				<div class="headerinfo">
 					<span class="fr"><?php echo $fr['headerinfo'] ?></span>

@@ -1118,6 +1118,15 @@ footer .tabs .tab-3  {
 	top: 60px;
 } 
 
+#page-extras .contact-form .left-col {
+	position: relative;
+	width: 45%;
+	height: auto;
+	float: left;
+	padding-left: 40px;
+	top: 10px;
+} 
+
 #page-atelierbebeparents .left-col h2,
 #page-atelierenfants .left-col h2,
 #page-atelieradultes .left-col h2,
@@ -1293,16 +1302,28 @@ footer .tabs .tab-3  {
 	text-align: right;
 }
 
-#page-atelierbebeparents .right-col .table {
+#page-atelierbebeparents .right-col .table.fr {
 	background: url(../img/planning_tb_yellow.png) no-repeat;
 }
 
-#page-atelierenfants .right-col .table {
+#page-atelierenfants .right-col .table.fr {
 	background: url(../img/planning_tb_blue.png) no-repeat;
 }
 
-#page-atelieradultes .right-col .table {
+#page-atelieradultes .right-col .table.fr {
 	background: url(../img/planning_tb_pink.png) no-repeat;
+}
+
+#page-atelierbebeparents .right-col .table.en {
+	background: url(../img/Schedule-jaune.jpg) no-repeat;
+}
+
+#page-atelierenfants .right-col .table.en {
+	background: url(../img/Schedule-bleu.jpg) no-repeat;
+}
+
+#page-atelieradultes .right-col .table.en {
+	background: url(../img/Schedule-rose.jpg) no-repeat;
 }
 
 #page-atelierbebeparents .right-col .table h3 {
