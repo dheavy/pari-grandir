@@ -6,6 +6,6 @@
  * @package WordPress
  * @subpackage Pari Grandir
  */
-header("Location: " . home_url('/atelier-enfants/6-ans-10-ans/anglais/'));
+header("Location: " . home_url('/atelier-enfants/7-ans-10-ans/anglais/'));
 ?>
 

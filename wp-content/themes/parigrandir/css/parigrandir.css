@@ -96,7 +96,7 @@ nav.top {
 nav.top ul, .submenu {
 	margin: 0; 
 	padding: 0;
-	font-family : Comic Sans MS, Comic Sans MS5, cursive, Arial;
+	font-family : Comic Sans MS, Comic Sans MS5, 'Architects Daughter', cursive, Arial;
 }
 
 nav.top ul a, 
@@ -651,7 +651,7 @@ footer .tabs ul, footer .tabs ul li {
 	margin:	0;
 	padding: 0;
 	float: left;
-	font-family : Comic Sans MS, Comic Sans MS5, cursive, Arial;
+	font-family : Comic Sans MS, Comic Sans MS5, 'Architects Daughter', cursive, Arial;
 	font-weight: bold;
 	font-size: 12px;
 	text-transform: uppercase;
@@ -1092,7 +1092,7 @@ footer .tabs .tab-3  {
 #page-presentation .sponsors h4,
 #page-presentation .sponsors h5,
 #page-presentation .sponsors h6 {
-	font-family : Comic Sans MS, Comic Sans MS5, cursive, Arial;
+	font-family : Comic Sans MS, Comic Sans MS5, 'Architects Daughter', cursive, Arial;
 	color: #FF0000;
 	font-size: 200%;
 	line-height: 75%;
@@ -1140,7 +1140,7 @@ footer .tabs .tab-3  {
 #page-anniversaire .right-col a,
 #page-extras .left-col h2,
 #page-extras .right-col a  {
-	font-family : Comic Sans MS, Comic Sans MS5, cursive, Arial;
+	font-family : Comic Sans MS, Comic Sans MS5, 'Architects Daughter', cursive, Arial;
 	line-height: 26px;
 	text-transform: uppercase;
 }
@@ -1371,7 +1371,7 @@ footer .tabs .tab-3  {
 	margin-top: -52px;
 	width: 200px;
 	z-index: 2;
-	font-family: Comic Sans MS, Comic Sans MS5, cursive, Arial;
+	font-family: Comic Sans MS, Comic Sans MS5, 'Architects Daughter', cursive, Arial;
 	font-weight: bold;
 	font-size: 15px;
 	text-transform: uppercase;
@@ -1391,7 +1391,7 @@ footer .tabs .tab-3  {
 	margin-top: -35px;
 	width: 650px;
 	z-index: 2;
-	font-family: Comic Sans MS, Comic Sans MS5, cursive, Arial;
+	font-family: Comic Sans MS, Comic Sans MS5, 'Architects Daughter', cursive, Arial;
 	font-weight: bold;
 	font-size: 15px;
 }

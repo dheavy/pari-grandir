@@ -1,34 +1,22 @@
 <?php
 /**
- * Bilinguism across the website needs session for state management.
- * The wp-config.php file at the root of the PHP install has been hacked 
- * with a couple of line at its very beginning to enable session management.
- */
-add_action('init', 'start_session', 1);
-add_action('wp_logout', 'stop_session');
-add_action('wp_login', 'stop_session');
-
-function start_session() {
-  if(!session_id()) {
-    session_start();
-  }
-}
-
-function stop_session() {
-  session_destroy ();
-}
-
-/**
  * BILINGUALISM FUNCTIONS
  * =================================================================================================
  */
-if (!isset($_SESSION['current_lang'])) 
-	$_SESSION['current_lang'] = 'fr';
+add_action('init', 'session_manager');
+function session_manager() {
+    if (!session_id()) {
+        session_start();
+    }
 
-$requested_lang = $_GET['lang'];
-if ($requested_lang == 'fr' || $requested_lang == 'en') {
-	$_SESSION['current_lang'] = $requested_lang;
-} 
+    if (!isset($_SESSION['current_lang'])) 
+			$_SESSION['current_lang'] = 'fr';
+
+		$requested_lang = $_GET['lang'];
+		if ($requested_lang == 'fr' || $requested_lang == 'en') {
+			$_SESSION['current_lang'] = $requested_lang;
+		} 
+}
 
 /**
  * LAYOUT FUNCTIONS

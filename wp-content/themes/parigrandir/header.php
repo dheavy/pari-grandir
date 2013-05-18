@@ -11,14 +11,22 @@
 	<meta name="current_lang" content="<?php echo $_SESSION['current_lang'] ?>">
 	<link href="<?php bloginfo('atom_url') ?>" rel="alternate" type="application/rss+xml" title="RSS 2.0">
 	<link href="<?php bloginfo('rss2_url') ?>" rel="alternate" type="application/atom+xml" title="Atom 1.0">
-
+	<meta name="viewport" content="width=1200">
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url') ?>">
 	<link href="<?php bloginfo('template_directory') ?>/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
 	
 	<!--[if lt IE 9]>
   <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"></script>
   <![endif]-->
-	<title><?php bloginfo('name') ?></title>
+  <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="//use.typekit.net/qxe3ftn.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<title>
+	<?php 
+	bloginfo('name');
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ($site_description) echo " | $site_description"; 
+	?></title>
 </head>
 <body>
 	<!--[if lt IE 7]>
